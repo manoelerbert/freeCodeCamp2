@@ -13,65 +13,74 @@
       <script>
         //javaScript for script
 
-        const button1 = document.querySelector("#button1");
-        const button2 = document.querySelector("#button2");
-        
-        const europeTeams = [
-
-  {
+const button1 = document.querySelector("#button1");
+const button2 = document.querySelector("#button2");
+const europeTeams = [
+{
     name: "European Cups",
     "button text": ["Champions League", "Europe League", "Conference League"],
     "button functions": [goChampionsLeague, goEuropeLeague, goConferenceLeague],
-  },
-  {
+},
+{
     name: "England",
     "button text": ["Premiere League", "Championship", "English Cup", "English League Cup"],
     "button functions": [goPremiereLeague, goChampionship, goEnglishCup, goEnglishLeagueCup],
-  },
-  {
+},
+{
     name: "Spain",
     "button text": ["La Liga", "La Liga B", "Copa del Rey", "Copa de la Liga"],
     "button functions": [goLaLiga, goLaLigaB, goCopaDelRey, goCopaDeLaLiga],
-  },
-  {
+},
+{
     name: "Germany",
     "button text": ["Bundesleague", "Bundesleague B", "Germany Cup"],
     "button functions": [goBundesLeague, goBundesleagueB, goGermanyCup],
-  },
-  {
+},
+{
     name: "France",
     "button text": ["French League", "French League B", "French Cup"],
     "button functions": [goFrenchLeague, goFrenchLeagueB, goFrenchCup],  
-  },
-  {
+},
+{
     name: "Portugal",
     "button text": ["Primeira Liga Portugal", "Segunda Liga Portugal", "Taca de Portugal", "Taca da Liga de Portugal"],
     "button functions": [goPrimeiraLigaPortugal, goSegundaLigaPortugal, goTacaDePortugal, goTacadaLigaDePortugal],
-  }
+}
 ];
-
 const southAmericaTeams = [
-    {
+{
         name: "South American Cups",
         "button text": ["Libertadores da America", "Copa Sulamericana"],
         "button functions": [goLibertadoresDaAmerica, goCopaSulamericana],
-    }
-    {
+}
+{
         name: "Argentina",
         "button text": ["Primera Liga Argentina", "Liga Argentina B", "Copa de Argentina"],
         "button functions": [goPrimeraLigaArgentina, goLigaArgentinaB, goCopaDeArgentina],
-    },
-    {
+},
+{
         name: "Brasil",
         "button text": ["Brasileirao serie A", "Brasileirao serie B", "Brasileirao serie C", "Copa do Brasil"],
         "button functions": [goBrasileiraoSerieA, goBrasileiraoSerieB, goBrasileiraoSerieC, goCopaDoBrasil],    
-    },
-    {
+},
+{
         name: "Colombia",
         "button text": ["Liga Colombia A", "Liga Colombia B", "Copa de Colombia"],
         "button functions": [goLigaColombiaA, goLigaColombiaB, goCopaDeColombia],
-    }
+}
 ];
+
+function update(location) {
+  
+  button1.innerText = europeTeams["button text"][0];
+  button2.innerText = southAmericaTeams["button text"][0];
+  button1.onclick = europeTeams["button functions"][0];
+  button2.onclick = southAmericaTeams["button functions"][0];
+}
+
+/* A partir daqui voltar ao raciocionio, de como fazer as functions dos botoes e depois chamar as functions. Rever se ja criei todas as variaveis necessarias */
+
+
 
 </script>
       <style>
