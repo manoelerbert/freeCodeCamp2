@@ -34,7 +34,7 @@ e) Botao "VOLTAR AO MENU ANTERIOR"(botao "VOLTAR AO MENU PRINCIPAL").
 
 const button1 = document.querySelector("#button1");
 const button2 = document.querySelector("#button2");
-const europeTeams = [
+const buttonEuropeTeams = [
 {
     name: "European Cups",
     "button text": ["Champions League", "Europe League", "Conference League"],
@@ -66,7 +66,7 @@ const europeTeams = [
     "button functions": [goPrimeiraLigaPortugal, goSegundaLigaPortugal, goTacaDePortugal, goTacadaLigaDePortugal],
 }
 ];
-const southAmericaTeams = [
+const buttonSouthAmericaTeams = [
 {
         name: "South American Cups",
         "button text": ["Libertadores da America", "Copa Sulamericana"],
@@ -88,31 +88,35 @@ const southAmericaTeams = [
         "button functions": [goLigaColombiaA, goLigaColombiaB, goCopaDeColombia],
 }
 ];
+button1.onclick = europe;
+button2.onclick = southAmerica;
 
-function update(location) {
-  
-  button1.innerText = europeTeams["button text"][0];
-  button2.innerText = southAmericaTeams["button text"][0];
-  button1.onclick = europeTeams["button functions"][0];
-  button2.onclick = southAmericaTeams["button functions"][0];
-}
+    function europe() {
+        button1.onclick = buttonEuropeTeams
+
+    }
+    function southAmerica() {
+
+    }
+     
 
 /* A partir daqui voltar ao raciocionio, de como fazer as functions dos botoes e depois chamar as functions. Rever se ja criei todas as variaveis necessarias */
 
 
 
 </script>
-      <style>
-        body {
-            background-color: #0a0a23;
-        }
-        button {
+<style>
+body {
+  background-color: #0a0a23;
+}
+button {
   cursor: pointer;
   color: #0a0a23;
   background-color: #feac32;
   background-image: linear-gradient(#fecc4c, #ffac33);
   border: 3px solid #feac32;
 }
+
       </style>
 </body>
 </html>
