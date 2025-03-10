@@ -28,25 +28,12 @@ e) Botao "VOLTAR AO MENU ANTERIOR"(botao "VOLTAR AO MENU PRINCIPAL").
     <div id="game">
         <div id="controls">
             <button id="button1">button1 - Ligas Europeias</button>
-            <button id="uefaLeagues">UEFA Leagues</button>
-            <button id="englandLeagues">England</button>
-            <button id="spainLeagues">Spain</button>
-            <button id="germanyLeagues">Germany</button>
-            <button id="franceLeagues">France</button>
-            <button id="portugalLeagues">Portugal</button>
             <button id="button2">button2 - Ligas das Américas</button>
-        </div>
-        <div id="secondLinks">
-            <button id="uefaLeagues">UEFA Leagues</button>
-            <button id="englandLeagues">England</button>
-            <button id="spainLeagues">Spain</button>
-            <button id="germanyLeagues">Germany</button>
-            <button id="franceLeagues">France</button>
-            <button id="portugalLeagues">Portugal</button>
         </div>
         <div id="text">
             SELECT AN OPTION
         </div>
+        
       </div>
 <script>
     const button1 = document.querySelector("#button1");
@@ -69,10 +56,13 @@ e) Botao "VOLTAR AO MENU ANTERIOR"(botao "VOLTAR AO MENU PRINCIPAL").
         button4.innerText = "Germany";
         button5.innerText = "France";
         button6.innerText = "Portugal";
+        text.innerText = "You enter the store.";
+        
 
     }
 
     button1.onclick = ligasEuropeias;
+    button2.onclick = ligasEuropeias;
 </script>
 <style>
 body {
