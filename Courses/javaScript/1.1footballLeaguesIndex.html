@@ -27,8 +27,10 @@ e) Botao "VOLTAR AO MENU ANTERIOR"(botao "VOLTAR AO MENU PRINCIPAL").
 <body>
     <div id="game">
         <div id="controls">
-            <button id="button1">button1 - Ligas Europeias</button>
+            <button id="button1">button1 - Ligas da Europa</button>
             <button id="button2">button2 - Ligas das Américas</button>
+            <button id="button3">button3 - Outras Ligas - Em breve </button>
+            
         </div>
         <div id="text">
             SELECT AN OPTION
@@ -38,31 +40,40 @@ e) Botao "VOLTAR AO MENU ANTERIOR"(botao "VOLTAR AO MENU PRINCIPAL").
 <script>
     const button1 = document.querySelector("#button1");
     const button2 = document.querySelector("#button2");
+    const button3 = document.querySelector("#button3");
     const text = document.querySelector("#text");
-    const uefaLeagues = document.querySelector("#uefaLeagues");
-    const englandLeagues = document.querySelector("#englandLeagues");
-    const spainLeagues = document.querySelector("#spainLeagues");
-    const germanyLeagues = document.querySelector("#germanyLeagues");
-    const franceLeagues = document.querySelector("#franceLeagues");
-    const portugalLeagues = document.querySelector("#portugalLeagues");
-
-
+    const locations = {
+      name: "europeLeagues",
+      "button text": ["UEFA Leagues", "Portugal", "VOLTAR"],
+      "button functions": ligasEuropeias, 
+      text: ""
+    }
+    
+button1.onclick = ligasEuropeias;
+button2.onclick = ligasDasAmericas;
+button3.onclick = voltar;
     
 
-    function ligasEuropeias() {
+
+  function ligasEuropeias() {
         button1.innerText = "UEFA Leagues";
-        button2.innerText = "England";
-        button3.innerText = "Spain";
-        button4.innerText = "Germany";
-        button5.innerText = "France";
-        button6.innerText = "Portugal";
-        text.innerText = "You enter the store.";
-        
+        button2.innerText = "Portugal";
+        button3.innerText = "VOLTAR";
+        text.innerText = "SELECT ANOTHER OPTION";
+    }
+    function ligasDasAmericas() {
+    button1.innerText = "Conmebol Leagues";
+    button2.innerText = "Brasil";
+    button3.innerText = "VOLTAR";
+    text.innerText = "SELECT ANOTHER ONE";  
+    }
+    function voltar() {
 
     }
 
-    button1.onclick = ligasEuropeias;
-    button2.onclick = ligasEuropeias;
+    
+    
+
 </script>
 <style>
 body {
