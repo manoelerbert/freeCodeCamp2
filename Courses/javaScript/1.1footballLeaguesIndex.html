@@ -42,36 +42,138 @@ e) Botao "VOLTAR AO MENU ANTERIOR"(botao "VOLTAR AO MENU PRINCIPAL").
     const button2 = document.querySelector("#button2");
     const button3 = document.querySelector("#button3");
     const text = document.querySelector("#text");
-    const locations = {
-      name: "europeLeagues",
-      "button text": ["UEFA Leagues", "Portugal", "VOLTAR"],
-      "button functions": ligasEuropeias, 
-      text: ""
-    }
-    
-button1.onclick = ligasEuropeias;
-button2.onclick = ligasDasAmericas;
-button3.onclick = voltar;
     
 
-
-  function ligasEuropeias() {
-        button1.innerText = "UEFA Leagues";
-        button2.innerText = "Portugal";
-        button3.innerText = "VOLTAR";
-        text.innerText = "SELECT ANOTHER OPTION";
+    function ligasDaEuropa() {
+      button1.innerText = "England";
+      button2.innerText = "Portugal";
+      button3.innerText = "BACK";
+      button1.onclick = ligasDaInglaterra;
+      button2.onclick = ligasDePortugal;
+      button3.onclick = backToMain;
+      text.innerText = "SELECT ANOTHER OPTION";
     }
+    
+
     function ligasDasAmericas() {
-    button1.innerText = "Conmebol Leagues";
-    button2.innerText = "Brasil";
-    button3.innerText = "VOLTAR";
-    text.innerText = "SELECT ANOTHER ONE";  
+      button1.innerText = "Argentina";
+      button2.innerText = "Brasil";
+      button3.innerText = "BACK";
+      button1.onclick = ligasDaArgentina;
+      button2.onclick = ligasDoBrasil;
+      button3.onclick = backToMain;
+      text.innerText = "SELECT ANOTHER OPTION";
     }
-    function voltar() {
+    function outrasLigas() {
+      text.innerText = "Em breve informaçoes de outras ligas";
+    }
+    function ligasDaInglaterra() {
+      button1.innerText = "Premiere League";
+      button2.innerText = "English Cup";
+      button3.innerText = "BACK";
+      button1.onclick = premiereLeague;
+      button2.onclick = englishCup;
+      button3.onclick = backToEurope;
+      text.innerText = "SELECT ANOTHER OPTION";
 
     }
+    function ligasDePortugal() {
+      button1.innerText = "Liga Portugal";
+      button2.innerText = "Taca de Portugal";
+      button3.innerText = "BACK";
+      button1.onclick = ligaPortugal;
+      button2.onclick = tacaDePortugal;
+      button3.onclick = backToEurope;
+      text.innerText = "SELECT ANOTHER OPTION";
 
+    }
+    function ligasDaArgentina() {
+      button1.innerText = "Campeonato Argentina";
+      button2.innerText = "Copa de Argentina";
+      button3.innerText = "BACK";
+      button1.onclick = campeonatoArgentina;
+      button2.onclick = copaDeArgentina;
+      button3.onclick = backToAmericas;
+      text.innerText = "SELECT ANOTHER OPTION";
+
+    }
+    function ligasDoBrasil() {
+      button1.innerText = "Brasileirao serie A";
+      button2.innerText = "Copa do Brasil";
+      button3.innerText = "BACK";
+      button1.onclick = brasileiraoSerieA;
+      button2.onclick = copaDoBrasil;
+      button3.onclick = backToAmericas;
+      text.innerText = "SELECT ANOTHER OPTION";
+    }
+    function premiereLeague() {
+
+    }
+    function englishCup() {
+
+    }
+    function backToMain() {
+      button1.innerText = "button1 - Ligas da Europa";
+      button2.innerText = "button2 - Ligas das Américas";
+      button3.innerText = "button3 - Outras Ligas - Em breve";
+      button1.onclick = ligasDaEuropa;
+      button2.onclick = ligasDasAmericas;
+      button3.onclick = outrasLigas;
+      text.innerText = "SELECT AN OPTION";
+    }
+    function backToEurope() {
+      button1.innerText = "England";
+      button2.innerText = "Portugal";
+      button3.innerText = "BACK";
+      button1.onclick = ligasDaInglaterra;
+      button2.onclick = ligasDePortugal;
+      button3.onclick = backToMain;
+      text.innerText = "SELECT ANOTHER OPTION";
+    }
+    function backToAmericas() {
+      button1.innerText = "Argentina";
+      button2.innerText = "Brasil";
+      button3.innerText = "BACK";
+      button1.onclick = ligasDaArgentina;
+      button2.onclick = ligasDoBrasil;
+      button3.onclick = backToMain;
+      text.innerText = "SELECT ANOTHER OPTION";
+    }
+    function backToEngland() {
+      button1.innerText = "Premiere League";
+      button2.innerText = "English Cup";
+      button3.innerText = "BACK";
+      button1.onclick = premiereLeague;
+      button2.onclick = englishCup;
+      button3.onclick = backToEurope;
+      text.innerText = "SELECT ANOTHER OPTION";
+    }
+    function ligaPortugal() {
+
+    }
+    function tacaDePortugal() {
+
+    }
+    function campeonatoArgentina() {
+
+    }
+    function copaDeArgentina() {
+
+    }
+    function brasileiraoSerieA() {
+
+    }
+    function copaDoBrasil() {
+      
+    }
     
+    
+
+    //initialize buttons
+
+    button1.onclick = ligasDaEuropa;
+    button2.onclick = ligasDasAmericas;
+    button3.onclick = outrasLigas;
     
 
 </script>
