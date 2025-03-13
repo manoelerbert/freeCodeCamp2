@@ -13,7 +13,7 @@
 <button id="button3">Other Leagues - COMING SOON<!--Outras Ligas - Em breve--></button>
 </div>
 <div id="text">
-SELECT AN OPTION
+SELECT AN OPTION - From above
 </div>
 </div>
 <script>
@@ -25,68 +25,68 @@ const locations = [
     {
         name: "Back to Main",
         "button text": ["Leagues from Europe", "Leagues from Americas", "Other Leagues - COMING SOON"],
-        "button functions": [ligasDaEuropa, ligasDasAmericas, outrasLigas],
-        text: "SELECT AN OPTION"  
+        "button functions": [leaguesFromEurope, leaguesFromAmericas, otherLeagues],
+        text: "SELECT AN OPTION  - From above"  
     },
     {
         name: "Leagues from Europe",
         "button text": ["England", "Portugal", "BACK"],
-        "button functions": [ligasDaInglaterra, ligasDePortugal, backToMain],
-        text: "SELECT ANOTHER OPTION"
+        "button functions": [leaguesFromEngland, leaguesFromPortugal, backToMain],
+        text: "SELECT ANOTHER OPTION  - From above"
     },
     {
         name: "Leagues from Americas",
         "button text": ["Argentina", "Brazil", "BACK"],
-        "button functions": [ligasDaArgentina, ligasDoBrasil, backToMain],
-        text: "SELECT ANOTHER OPTION"
+        "button functions": [leaguesFromArgentina, leaguesFromBrazil, backToMain],
+        text: "SELECT ANOTHER OPTION  - From above"
     },
     {
         name: "Leagues from England",
         "button text": ["Premiere League", "English Cup", "BACK"],
         "button functions": [premiereLeague, englishCup, backToEurope],
-        text: "SELECT ANOTHER OPTION"
+        text: "SELECT ANOTHER OPTION  - From above"
     },
     {
         name: "Leagues from Portugal",
         "button text": ["Liga Portugal", "Taca de Portugal", "BACK"],
         "button functions": [ligaPortugal, tacaDePortugal, backToEurope],
-        text: "SELECT ANOTHER OPTION"
+        text: "SELECT ANOTHER OPTION  - From above"
     },
     {
         name: "Leagues from Argentina",
         "button text": ["Campeonato Argentina", "Copa de Argentina", "BACK"],
         "button functions": [campeonatoArgentina, copaDeArgentina, backToAmericas],
-        text: "SELECT ANOTHER OPTION"
+        text: "SELECT ANOTHER OPTION  - From above"
     },
     {
         name: "Leagues from Brazil",
         "button text": ["Brasileirao serie A", "Copa do Brasil", "BACK"],
         "button functions": [brasileiraoSerieA, copaDoBrasil, backToAmericas],
-        text: "SELECT ANOTHER OPTION"
+        text: "SELECT ANOTHER OPTION  - From above"
     },
     {
         name: "Back to Europe",
         "button text": ["England", "Portugal", "BACK"],
-        "button functions": [ligasDaInglaterra, ligasDePortugal, backToMain],
-        text: "SELECT ANOTHER OPTION"
+        "button functions": [leaguesFromEngland, leaguesFromPortugal, backToMain],
+        text: "SELECT ANOTHER OPTION  - From above",
     },
     {
         name: "Back to Americas",
         "button text": ["Argentina", "Brazil", "BACK"],
-        "button functions": [ligasDaArgentina, ligasDoBrasil, backToMain],
-        text: "SELECT ANOTHER OPTION"
+        "button functions": [leaguesFromArgentina, leaguesFromBrazil, backToMain],
+        text: "SELECT ANOTHER OPTION  - From above"
     },
     {
         name: "Back to England",
         "button text": ["Premiere League", "English Cup", "BACK"],
         "button functions": [premiereLeague, englishCup, backToEurope],
-        text: "SELECT ANOTHER OPTION"
+        text: "SELECT ANOTHER OPTION  - From above"
     }
 ];
 //initialize buttons
-button1.onclick = ligasDaEuropa;
-button2.onclick = ligasDasAmericas;
-button3.onclick = outrasLigas;
+button1.onclick = leaguesFromEurope;
+button2.onclick = leaguesFromAmericas;
+button3.onclick = otherLeagues;
 
 function update(location) {
   button1.innerText = location["button text"][0];
@@ -97,28 +97,28 @@ function update(location) {
   button3.onclick = location["button functions"][2];
   text.innerText = location.text;
 }
-function ligasDaEuropa() {
+function leaguesFromEurope() {
 update(locations[1]);
 }
-function ligasDasAmericas() {
+function leaguesFromAmericas() {
 update(locations[2]);
 }
-function outrasLigas() {
+function otherLeagues() {
 text.innerText = "COMING SOON - We are preparing an amazing APP for you";
 }
 function backToMain() {
 update(locations[0]);
 }
-function ligasDaInglaterra() {
+function leaguesFromEngland() {
 update(locations[3]);
 }
-function ligasDePortugal() {
+function leaguesFromPortugal() {
 update(locations[4]);
 }
-function ligasDaArgentina() {
+function leaguesFromArgentina() {
 update(locations[5]);
 }
-function ligasDoBrasil() {
+function leaguesFromBrazil() {
 update(locations[6]);
 }
 function premiereLeague() {
@@ -148,18 +148,39 @@ update(locations[7]);
  }
 </script>
 <style>
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
-background-color: #0a0a23;
+/*background-color: #0a0a23;*/
+background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
+  margin: 5px 10px 10px 5px;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 #text {
 background-color: #0a0a23;
 color: #ffffff;
-padding: 10px;
+padding: 15px;
+width: 49.4%;
+height: 90vh;
+margin: 5px;
+text-align: center;
+font-family: sans-serif;
 }
 #controls {
-border: 1px solid #0a0a23;
+border: none;
 color: #0a0a23;
 padding: 5px;
+width: 60%;
 }
 button {
 cursor: pointer;
@@ -167,6 +188,7 @@ color: #0a0a23;
 background-color: #feac32;
 background-image: linear-gradient(#fecc4c, #ffac33);
 border: 3px solid #feac32;
+font-size: 20px;
 }
 </style>
 </body>
