@@ -22,28 +22,28 @@ const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const text = document.querySelector("#text");
 
-function ligasDaEuropa() {
+function leaguesFromEurope() {
 button1.innerText = "England";
 button2.innerText = "Portugal";
 button3.innerText = "BACK";
-button1.onclick = ligasDaInglaterra;
-button2.onclick = ligasDePortugal;
+button1.onclick = leaguesFromEngland;
+button2.onclick = leaguesFromPortugal;
 button3.onclick = backToMain;
 text.innerText = "SELECT ANOTHER OPTION";
 }
-function ligasDasAmericas() {
+function leaguesFromAmericas() {
 button1.innerText = "Argentina";
 button2.innerText = "Brazil";
 button3.innerText = "BACK";
-button1.onclick = ligasDaArgentina;
-button2.onclick = ligasDoBrasil;
+button1.onclick = leaguesFromArgentina;
+button2.onclick = leaguesFromBrazil;
 button3.onclick = backToMain;
 text.innerText = "SELECT ANOTHER OPTION";
 }
-function outrasLigas() {
+function otherLeagues() {
 text.innerText = "COMING SOON - We are preparing an amazing APP for you";
 }
-function ligasDaInglaterra() {
+function leaguesFromEngland() {
 button1.innerText = "Premiere League";
 button2.innerText = "English Cup";
 button3.innerText = "BACK";
@@ -52,7 +52,7 @@ button2.onclick = englishCup;
 button3.onclick = backToEurope;
 text.innerText = "SELECT ANOTHER OPTION";
 }
-function ligasDePortugal() {
+function leaguesFromPortugal() {
 button1.innerText = "Liga Portugal";
 button2.innerText = "Taca de Portugal";
 button3.innerText = "BACK";
@@ -61,7 +61,7 @@ button2.onclick = tacaDePortugal;
 button3.onclick = backToEurope;
 text.innerText = "SELECT ANOTHER OPTION";
 }
-function ligasDaArgentina() {
+function leaguesFromArgentina() {
 button1.innerText = "Campeonato Argentina";
 button2.innerText = "Copa de Argentina";
 button3.innerText = "BACK";
@@ -70,7 +70,7 @@ button2.onclick = copaDeArgentina;
 button3.onclick = backToAmericas;
 text.innerText = "SELECT ANOTHER OPTION";
 }
-function ligasDoBrasil() {
+function leaguesFromBrazil() {
 button1.innerText = "Brasileirao serie A";
 button2.innerText = "Copa do Brasil";
 button3.innerText = "BACK";
@@ -87,17 +87,17 @@ function backToMain() {
 button1.innerText = "Leagues from Europe";
 button2.innerText = "Leagues from Americas";
 button3.innerText = "Other Leagues - COMING SOON";
-button1.onclick = ligasDaEuropa;
-button2.onclick = ligasDasAmericas;
-button3.onclick = outrasLigas;
+button1.onclick = leaguesFromEurope;
+button2.onclick = leaguesFromAmericas;
+button3.onclick = otherLeagues;
 text.innerText = "SELECT AN OPTION";
 }
 function backToEurope() {
 button1.innerText = "England";
 button2.innerText = "Portugal";
  button3.innerText = "BACK";
- button1.onclick = ligasDaInglaterra;
- button2.onclick = ligasDePortugal;
+ button1.onclick = leaguesFromEngland;
+ button2.onclick = leaguesFromPortugal;
  button3.onclick = backToMain;
  text.innerText = "SELECT ANOTHER OPTION";
  }
@@ -105,8 +105,8 @@ button2.innerText = "Portugal";
  button1.innerText = "Argentina";
  button2.innerText = "Brazil";
  button3.innerText = "BACK";
- button1.onclick = ligasDaArgentina;
- button2.onclick = ligasDoBrasil;
+ button1.onclick = leaguesFromArgentina;
+ button2.onclick = leaguesFromBrazil;
  button3.onclick = backToMain;
  text.innerText = "SELECT ANOTHER OPTION";
  }
@@ -132,9 +132,9 @@ button2.innerText = "Portugal";
  function copaDoBrasil() {
  }
  //initialize buttons
- button1.onclick = ligasDaEuropa;
- button2.onclick = ligasDasAmericas;
- button3.onclick = outrasLigas;
+ button1.onclick = leaguesFromEurope;
+ button2.onclick = leaguesFromAmericas;
+ button3.onclick = otherLeagues;
  </script>
  <style>
  body {
