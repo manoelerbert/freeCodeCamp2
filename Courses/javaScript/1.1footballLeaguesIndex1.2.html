@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Football Leagues Index</title>
+</head>
+<body>
+<div id="game">
+<div id="controls">
+<button id="button1">Leagues from Europe<!--Ligas da Europa--></button>
+<button id="button2">Leagues from Americas<!--Ligas das Américas--></button>
+<button id="button3">Other Leagues - COMING SOON<!--Outras Ligas - Em breve--></button>
+</div>
+<div id="text">
+SELECT AN OPTION
+</div>
+</div>
+<script>
+const button1 = document.querySelector("#button1");
+const button2 = document.querySelector("#button2");
+const button3 = document.querySelector("#button3");
+const text = document.querySelector("#text");
+const locations = [
+    {
+        name: "Back to Main",
+        "button text": ["Leagues from Europe", "Leagues from Americas", "Other Leagues - COMING SOON"],
+        "button functions": [ligasDaEuropa, ligasDasAmericas, outrasLigas],
+        text: "SELECT AN OPTION"  
+    },
+    {
+        name: "Leagues from Europe",
+        "button text": ["England", "Portugal", "BACK"],
+        "button functions": [ligasDaInglaterra, ligasDePortugal, backToMain],
+        text: "SELECT ANOTHER OPTION"
+    },
+    {
+        name: "Leagues from Americas",
+        "button text": ["Argentina", "Brazil", "BACK"],
+        "button functions": [ligasDaArgentina, ligasDoBrasil, backToMain],
+        text: "SELECT ANOTHER OPTION"
+    },
+    {
+        name: "Leagues from England",
+        "button text": ["Premiere League", "English Cup", "BACK"],
+        "button functions": [premiereLeague, englishCup, backToEurope],
+        text: "SELECT ANOTHER OPTION"
+    },
+    {
+        name: "Leagues from Portugal",
+        "button text": ["Liga Portugal", "Taca de Portugal", "BACK"],
+        "button functions": [ligaPortugal, tacaDePortugal, backToEurope],
+        text: "SELECT ANOTHER OPTION"
+    },
+    {
+        name: "Leagues from Argentina",
+        "button text": ["Campeonato Argentina", "Copa de Argentina", "BACK"],
+        "button functions": [campeonatoArgentina, copaDeArgentina, backToAmericas],
+        text: "SELECT ANOTHER OPTION"
+    },
+    {
+        name: "Leagues from Brazil",
+        "button text": ["Brasileirao serie A", "Copa do Brasil", "BACK"],
+        "button functions": [brasileiraoSerieA, copaDoBrasil, backToAmericas],
+        text: "SELECT ANOTHER OPTION"
+    },
+    {
+        name: "Back to Europe",
+        "button text": ["England", "Portugal", "BACK"],
+        "button functions": [ligasDaInglaterra, ligasDePortugal, backToMain],
+        text: "SELECT ANOTHER OPTION"
+    },
+    {
+        name: "Back to Americas",
+        "button text": ["Argentina", "Brazil", "BACK"],
+        "button functions": [ligasDaArgentina, ligasDoBrasil, backToMain],
+        text: "SELECT ANOTHER OPTION"
+    },
+    {
+        name: "Back to England",
+        "button text": ["Premiere League", "English Cup", "BACK"],
+        "button functions": [premiereLeague, englishCup, backToEurope],
+        text: "SELECT ANOTHER OPTION"
+    }
+];
+//initialize buttons
+button1.onclick = ligasDaEuropa;
+button2.onclick = ligasDasAmericas;
+button3.onclick = outrasLigas;
+
+function update(location) {
+  button1.innerText = location["button text"][0];
+  button2.innerText = location["button text"][1];
+  button3.innerText = location["button text"][2];
+  button1.onclick = location["button functions"][0];
+  button2.onclick = location["button functions"][1];
+  button3.onclick = location["button functions"][2];
+  text.innerText = location.text;
+}
+function ligasDaEuropa() {
+update(locations[1]);
+}
+function ligasDasAmericas() {
+update(locations[2]);
+}
+function outrasLigas() {
+text.innerText = "COMING SOON - We are preparing an amazing APP for you";
+}
+function backToMain() {
+update(locations[0]);
+}
+function ligasDaInglaterra() {
+update(locations[3]);
+}
+function ligasDePortugal() {
+update(locations[4]);
+}
+function ligasDaArgentina() {
+update(locations[5]);
+}
+function ligasDoBrasil() {
+update(locations[6]);
+}
+function premiereLeague() {
+}
+function englishCup() {
+}
+function backToEurope() {
+update(locations[7]);
+ }
+ function backToAmericas() {
+ update(locations[8]);
+ }
+ function backToEngland() {
+ update(locations[9]);
+ }
+ function ligaPortugal() {
+ }
+ function tacaDePortugal() {
+ }
+ function campeonatoArgentina() {
+ }
+ function copaDeArgentina() {
+ }
+ function brasileiraoSerieA() {
+ }
+ function copaDoBrasil() {
+ }
+</script>
+<style>
+body {
+background-color: #0a0a23;
+}
+#text {
+background-color: #0a0a23;
+color: #ffffff;
+padding: 10px;
+}
+#controls {
+border: 1px solid #0a0a23;
+color: #0a0a23;
+padding: 5px;
+}
+button {
+cursor: pointer;
+color: #0a0a23;
+background-color: #feac32;
+background-image: linear-gradient(#fecc4c, #ffac33);
+border: 3px solid #feac32;
+}
+</style>
+</body>
+</html>
