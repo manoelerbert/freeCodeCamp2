@@ -21,24 +21,60 @@ const button1 = document.querySelector("#button1");
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const text = document.querySelector("#text");
+const locations = [
+    {
+        name: Back to Main,
+        "button text": ["Ligas da Europa", "Ligas das Américas", "Outras Ligas - Em breve"],
+        "button functions": [ligasDaEuropa, ligasDasAmericas, outrasLigas],
+        text.innerText: "SELECT AN OPTION",
+    },
+    {
+        name: Ligas da Europa,
+        "button text": ["England", "Portugal", "BACK"],
+        "button functions": [ligasDaInglaterra, ligasDePortugal, backToMain],
+        text.innerText: "SELECT ANOTHER OPTION",
+    },
+    {
+        name: "Ligas das Américas",
+        "button text": ["Argentina", "Brasil", "BACK"],
+        "button functions": [ligasDaArgentina, ligasDoBrasil, backToMain],
+        text.innerText: "SELECT ANOTHER OPTION"
+    }
+];
+
+function backToMain() {
+update(locations[0]);
+}
+
+function update(location) {
+button1.innerText = location["button text"][0];
+button2.innerText = location["button text"][1];
+button3.innerText = location["button text"][2];
+button1.onclick = location["button functions"][0];
+button2.onclick = location["button functions"][1];
+button3.onclick = location["button functions"][2];
+text.innerText = location.text;
+}
 
 function ligasDaEuropa() {
-button1.innerText = "England";
+    update(locations[1]);
+/*button1.innerText = "England";
 button2.innerText = "Portugal";
 button3.innerText = "BACK";
 button1.onclick = ligasDaInglaterra;
 button2.onclick = ligasDePortugal;
 button3.onclick = backToMain;
-text.innerText = "SELECT ANOTHER OPTION";
+text.innerText = "SELECT ANOTHER OPTION";*/
 }
 function ligasDasAmericas() {
-button1.innerText = "Argentina";
+    update(locations[2]);
+/* button1.innerText = "Argentina";
 button2.innerText = "Brasil";
 button3.innerText = "BACK";
 button1.onclick = ligasDaArgentina;
 button2.onclick = ligasDoBrasil;
 button3.onclick = backToMain;
-text.innerText = "SELECT ANOTHER OPTION";
+text.innerText = "SELECT ANOTHER OPTION";*/
 }
 function outrasLigas() {
 text.innerText = "Em breve informaçoes de outras ligas";
@@ -83,15 +119,7 @@ function premiereLeague() {
 }
 function englishCup() {
 }
-function backToMain() {
-button1.innerText = "Ligas da Europa";
-button2.innerText = "Ligas das Américas";
-button3.innerText = "Outras Ligas - Em breve";
-button1.onclick = ligasDaEuropa;
-button2.onclick = ligasDasAmericas;
-button3.onclick = outrasLigas;
-text.innerText = "SELECT AN OPTION";
-}
+
 function backToEurope() {
 button1.innerText = "England";
 button2.innerText = "Portugal";
