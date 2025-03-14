@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Football Leagues Index</title>
+</head>
+<body>
+<div id="game">
+<div id="controls">
+<button id="button1">Leagues from Europe<!--Ligas da Europa--></button>
+<button id="button2">Leagues from Americas<!--Ligas das Américas--></button>
+<button id="button3">Leagues from Asia<!--Outras Ligas - Em breve--></button>
+<button id="button4">Leagues from Africa<!--Outras Ligas - Em breve--></button>
+<button id="button5">Other Leagues - Coming soon!<!--Outras Ligas - Em breve--></button>
+</div>
+<div id="text">
+SELECT AN OPTION - From above
+</div>
+</div>
+<script>
+const button1 = document.querySelector("#button1");
+const button2 = document.querySelector("#button2");
+const button3 = document.querySelector("#button3");
+const button4 = document.querySelector("#button4");
+const button5 = document.querySelector("#button5");
+const text = document.querySelector("#text");
+const locations = [
+{
+    name: "Leagues from Europe",
+    "button text": ["England", "Spain", "Italy", "Portugal", "BACK"],
+    "button functions": [leaguesFromEngland, leaguesFromSpain, leaguesFromItaly, leaguesFromPortugal, otherLeagues],
+    text: "SELECT ANOTHER OPTION"
+},
+{
+    name: "Leagues from Americas",
+    "button text": ["Argentina", "Brazil", "Mexico", "USA", "BACK"],
+    "button functions": [leaguesFromArgentina, leaguesFromBrazil, leaguesfromMexico, leaguesFromUsa, backToMain],
+    text: "SELECT ANOTHER OPTION"
+},    
+{
+    name: "Leagues from Asia",
+    "button text": ["Japan", "China", "Saudi Arabia", "India", "BACK"],
+    "button functions": [leaguesFromJapan, leaguesFromChina, leaguesFromSaudiArabia, leaguesFromIndia, backToMain],
+    text: "SELECT ANOTHER OPTION"
+},
+{
+    name: "Leagues from Africa",
+    "button text": ["Morocco", "Egipt", "South Africa", "Angola", "BACK"],
+    "button functions": [leaguesFromMorocco, leaguesFromEgipt, leaguesFromSouthAfrica, leaguesFromAngola, backToMain],
+},
+{
+        name: "Back to Main",
+        "button text": ["Leagues from Europe", "Leagues from Americas", "Leagues from Asia", "Leagues from Africa", "Other Leagues - COMING SOON"],
+        "button functions": [leaguesFromEurope, leaguesFromAmericas, leaguesFromAsia, leaguesFromAfrica, otherLeagues],
+        text: "SELECT AN OPTION  - From above"  
+    },
+
+    //initialize buttons
+button1.onclick = leaguesFromEurope;
+button2.onclick = leaguesFromAmericas;
+button3.onclick = leaguesFromAsia;
+button4.onclick = leaguesFromAfrica;
+button5.onclick = otherLeagues;
+
+function update(location) {
+button1.innerText = location["button text"][0];
+button2.innerText = location["button text"][1];
+button3.innerText = location["button text"][2];
+button4.innerText = location["button text"][3];
+button5.innerText = location["button text"][4];
+button1.onclick = location["button functions"][0];
+button2.onclick = location["button functions"][1];
+button3.onclick = location["button functions"][2];
+button4.onclick = location["button functions"][3];
+button5.onclick = location["button functions"][4];
+text.innerText = location.text;
+}
+
+function leaguesFromEurope() {
+    update(locations[0]);
+}
+
+function leaguesFromAmericas() {
+    update(locations[1]);
+}
+
+function leaguesFromAsia() {
+    update(locations[2]);
+}
+
+function leaguesFromAfrica() {
+    update(locations[3]);
+}
+
+function otherLeagues() {
+text.innerText = "COMING SOON - We are preparing an amazing APP for you";
+}
+
+</script>
+<style>
+
+html {
+    box-sizing: border-box;
+    max-width: 98%;
+    border: none;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  max-width: 100%;
+}
+
+body {
+/*background-color: #0a0a23;*/
+background-color: lightgray;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#text {
+background-color: lightgray;
+color: black;
+padding: 15px;
+width: 98%;
+height: 90vh;
+margin: 0;
+text-align: center;
+font-family: sans-serif;
+}
+#controls {
+border: none;
+color: #0a0a23;
+padding: 0;
+width: 100%;
+}
+button {
+cursor: pointer;
+color: #0a0a23;
+background-color: #feac32;
+background-image: linear-gradient(#fecc4c, #ffac33);
+border: 3px solid white;
+font-size: 20px;
+width: 100%;
+}
+</style>
+</body>
+</html>
