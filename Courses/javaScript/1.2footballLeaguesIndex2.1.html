@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Football Leagues Index</title>
+</head>
+<body>
+<div id="game">
+<div id="controls">
+<button id="button1">Leagues from Europe</button>
+<button id="button2">Leagues from Americas</button>
+<button id="button3">Leagues from Asia</button>
+<button id="button4">Leagues from Africa</button>
+<button id="button5">Other Leagues - Coming soon !!!</button>
+</div>
+<div id="text">
+SELECT AN OPTION - From above
+</div>
+</div>
+<script>
+const button1 = document.querySelector("#button1");
+const button2 = document.querySelector("#button2");
+const button3 = document.querySelector("#button3");
+const button4 = document.querySelector("#button4");
+const button5 = document.querySelector("#button5");
+const text = document.querySelector("#text");
+
+function leaguesFromEurope() {
+button1.innerText = "England";
+button2.innerText = "Portugal";
+button3.innerText = "Spain";
+button4.innerText = "France";
+button5.innerText = "BACK";
+button1.onclick = leaguesFromEngland;
+button2.onclick = leaguesFromPortugal;
+button3.onclick = leaguesFromSpain;
+button4.onclick = leaguesFromFrance;
+button5.onclick = backToMain;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromAmericas() {
+button1.innerText = "Argentina";
+button2.innerText = "Brazil";
+button3.innerText = "Mexico";
+button4.innerText = "USA";
+button5.innerText = "BACK";
+button1.onclick = leaguesFromArgentina;
+button2.onclick = leaguesFromBrazil;
+button3.onclick = leaguesFromMexico;
+button4.onclick = leaguesFromUsa;
+button5.onclick = backToMain;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromAsia() {
+button1.innerText = "Japan";
+button2.innerText = "China";
+button3.innerText = "United Arab Emirates";
+button4.innerText = "South Korea";
+button5.innerText = "BACK";
+button1.onclick = leaguesFromJapan;
+button2.onclick = leaguesFromChina;
+button3.onclick = leaguesFromUnitedArabEmirates;
+button4.onclick = leaguesFromSouthKorea;
+button5.onclick = backToMain;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromAfrica() {
+button1.innerText = "Morocco";
+button2.innerText = "Egipt";
+button3.innerText = "Angola";
+button4.innerText = "South Africa";
+button5.innerText = "BACK";
+button1.onclick = leaguesFromMorocco;
+button2.onclick = leaguesFromEgipt;
+button3.onclick = leaguesFromAngola;
+button4.onclick = leaguesFromSouthAfrica;
+button5.onclick = backToMain;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function otherLeagues() {
+text.innerText = "COMING SOON - We are preparing an amazing APP for you";
+}
+function leaguesFromEngland() {
+button1.innerText = "Premiere League";
+button2.innerText = "Championship";
+button3.innerText = "English Cup";
+button4.innerText = "English League Cup";
+button5.innerText = "BACK";
+button1.onclick = englandLeagues1;
+button2.onclick = englandLeagues2;
+button3.onclick = englandLeagues3;
+button4.onclick = englandLeagues4;
+button5.onclick = backToEurope;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromPortugal() {
+button1.innerText = "Liga Portugal";
+button2.innerText = "Liga 2 Portugal";
+button3.innerText = "Taça de Portugal";
+button4.innerText = "Taça da Liga de Portugal";
+button5.innerText = "BACK";
+button1.onclick = portugalLeagues1;
+button2.onclick = portugalLeagues2;
+button3.onclick = portugalLeagues3;
+button4.onclick = portugalLeagues4;
+button5.onclick = backToEurope;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromSpain() {
+button1.innerText = "La Liga";
+button2.innerText = "La Liga 2";
+button3.innerText = "Copa del Rey";
+button4.innerText = "Copa de La Liga";
+button5.innerText = "BACK";
+button1.onclick = spainLeagues1;
+button2.onclick = spainLeagues2;
+button3.onclick = spainLeagues3;
+button4.onclick = spainLeagues4;
+button5.onclick = backToEurope;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromFrance() {
+button1.innerText = "Ligue 1";
+button2.innerText = "Ligue 2";
+button3.innerText = "Coupe de France";
+button4.innerText = "Copa de La Ligue";
+button5.innerText = "BACK";
+button1.onclick = franceLeagues1;
+button2.onclick = franceLeagues2;
+button3.onclick = franceLeagues3;
+button4.onclick = franceLeagues4;
+button5.onclick = backToEurope;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function backToMain() {
+button1.innerText = "LEAGUES FROM EUROPE";
+button2.innerText = "LEAGUES FROM AMERICAS";
+button3.innerText = "LEAGUES FROM ASIA";
+button4.innerText = "LEAGUES FROM AFRICA";
+button5.innerText = "OTHER LEAGUES - COMING SOON !!!";
+button1.onclick = leaguesFromEurope;
+button2.onclick = leaguesFromAmericas;
+button3.onclick = leaguesFromAsia;
+button4.onclick = leaguesFromAfrica;
+button5.onclick = otherLeagues;
+text.innerText = "SELECT AN OPTION - From above";
+}
+function backToEurope() {
+button1.innerText = "England";
+button2.innerText = "Portugal";
+button3.innerText = "Spain";
+button4.innerText = "France";
+button5.innerText = "BACK";
+button1.onclick = leaguesFromEngland;
+button2.onclick = leaguesFromPortugal;
+button3.onclick = leaguesFromSpain;
+button4.onclick = leaguesFromFrance;
+button5.onclick = backToMain;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function backToAmericas() {
+button1.innerText = "Argentina";
+button2.innerText = "Brazil";
+button3.innerText = "Mexico";
+button4.innerText = "USA";
+button5.innerText = "BACK";
+button1.onclick = leaguesFromArgentina;
+button2.onclick = leaguesFromBrazil;
+button3.onclick = leaguesFromMexico;
+button4.onclick = leaguesFromUsa;
+button5.onclick = backToMain;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function backToAsia() {
+button1.innerText = "Japan";
+button2.innerText = "China";
+button3.innerText = "United Arab Emirates";
+button4.innerText = "South Korea";
+button5.innerText = "BACK";
+button1.onclick = leaguesFromJapan;
+button2.onclick = leaguesFromChina;
+button3.onclick = leaguesFromUnitedArabEmirates;
+button4.onclick = leaguesFromSouthKorea;
+button5.onclick = backToMain;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function backToAfrica() {
+button1.innerText = "Morocco";
+button2.innerText = "Egipt";
+button3.innerText = "Angola";
+button4.innerText = "South Africa";
+button5.innerText = "BACK";
+button1.onclick = leaguesFromMorocco;
+button2.onclick = leaguesFromEgipt;
+button3.onclick = leaguesFromAngola;
+button4.onclick = leaguesFromSouthAfrica;
+button5.onclick = backToMain;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromArgentina() {
+button1.innerText = "Primera Division";
+button2.innerText = "Primera Nacional";
+button3.innerText = "Primera B";
+button4.innerText = "Copa de Argentina";
+button5.innerText = "BACK";
+button1.onclick = franceLeagues1;
+button2.onclick = franceLeagues2;
+button3.onclick = franceLeagues3;
+button4.onclick = franceLeagues4;
+button5.onclick = backToAmericas;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromBrazil() {
+button1.innerText = "Brasileirão Serie A";
+button2.innerText = "Brasileirão Serie B";
+button3.innerText = "Brasileirão Serie C";
+button4.innerText = "Copa do Brasil";
+button5.innerText = "BACK";
+button1.onclick = brazilLeagues1;
+button2.onclick = brazilLeagues2;
+button3.onclick = brazilLeagues3;
+button4.onclick = brazilLeagues4;
+button5.onclick = backToAmericas;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromMexico() {
+button1.innerText = "Liga MX";
+button2.innerText = "Liga de Expansion MX";
+button3.innerText = "Liga Premier Serie A";
+button4.innerText = "Copa MX";
+button5.innerText = "BACK";
+button1.onclick = mexicoLeagues1;
+button2.onclick = mexicoLeagues2;
+button3.onclick = mexicoLeagues3;
+button4.onclick = mexicoLeagues4;
+button5.onclick = backToAmericas;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromUsa() {
+button1.innerText = "MLS";
+button2.innerText = "";
+button3.innerText = "";
+button4.innerText = "";
+button5.innerText = "BACK";
+button1.onclick = usaLeagues1;
+button2.onclick = usaLeagues2;
+button3.onclick = usaLeagues3;
+button4.onclick = usaLeagues4;
+button5.onclick = backToAmericas;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromJapan() {
+button1.innerText = "J1 League";
+button2.innerText = "J2 League";
+button3.innerText = "J3 League";
+button4.innerText = "Emperor´s Cup";
+button5.innerText = "BACK";
+button1.onclick = japanLeagues1;
+button2.onclick = japanLeagues2;
+button3.onclick = japanLeagues3;
+button4.onclick = japanLeagues4;
+button5.onclick = backToAsia;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromChina() {
+button1.innerText = "CFA Super League";
+button2.innerText = "CFA China League";
+button3.innerText = "CFA China League 2";
+button4.innerText = "China Cup";
+button5.innerText = "BACK";
+button1.onclick = chinaLeagues1;
+button2.onclick = chinaLeagues2;
+button3.onclick = chinaLeagues3;
+button4.onclick = chinaLeagues4;
+button5.onclick = backToAsia;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromUnitedArabEmirates() {
+button1.innerText = "UAE Pro League";
+button2.innerText = "UAE Division 1";
+button3.innerText = "UAE Division 2";
+button4.innerText = "League Cup";
+button5.innerText = "BACK";
+button1.onclick = unitedArabEmiratesLeagues1;
+button2.onclick = unitedArabEmiratesLeagues2;
+button3.onclick = unitedArabEmiratesLeagues3;
+button4.onclick = unitedArabEmiratesLeagues4;
+button5.onclick = backToAsia;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromSouthKorea() {
+button1.innerText = "K League 1";
+button2.innerText = "K League 2";
+button3.innerText = "Korean Cup";
+button4.innerText = "League Cup";
+button5.innerText = "BACK";
+button1.onclick = koreaLeagues1;
+button2.onclick = koreaLeagues2;
+button3.onclick = koreaLeagues3;
+button4.onclick = koreaLeagues4;
+button5.onclick = backToAsia;
+text.innerText = "SELECT ANOTHER OPTION";
+}
+function leaguesFromMorocco() {
+button1.innerText = "Botola 1";
+button2.innerText = "Botola 2";
+button3.innerText = "National";
+button4.innerText = "Moroccan Throne Cup";
+button5.innerText = "BACK";
+button1.onclick = moroccoLeagues1;
+button2.onclick = moroccoLeagues2;
+button3.onclick = moroccoLeagues3;
+button4.onclick = moroccoLeagues4;
+button5.onclick = backToAfrica;
+text.innerText = "SELECT ANOTHER OPTION"
+}
+function leaguesFromEgipt() {
+button1.innerText = "Premiere League";
+button2.innerText = "Division 2A";
+button3.innerText = "Egipt Cup";
+button4.innerText = "League Cup";
+button5.innerText = "BACK";
+button1.onclick = egiptLeagues1;
+button2.onclick = egiptLeagues2;
+button3.onclick = egiptLeagues3;
+button4.onclick = egiptLeagues4;
+button5.onclick = backToAfrica;
+text.innerText = "SELECT ANOTHER OPTION"
+}
+function leaguesFromAngola() {
+button1.innerText = "Girabola - League 1";
+button2.innerText = "Segundona - League 2";
+button3.innerText = "Campeonato Provincial - League 3";
+button4.innerText = "Taça de Angola";
+button5.innerText = "BACK";
+button1.onclick = angolaLeagues1;
+button2.onclick = angolaLeagues2;
+button3.onclick = angolaLeagues3;
+button4.onclick = angolaLeagues4;
+button5.onclick = backToAfrica;
+text.innerText = "SELECT ANOTHER OPTION"
+}
+function leaguesFromSouthAfrica() {
+button1.innerText = "Premiere Soccer League";
+button2.innerText = "National First Division";
+button3.innerText = "South Africa Cup";
+button4.innerText = "League Cup";
+button5.innerText = "BACK";
+button1.onclick = southAfricaLeagues1;
+button2.onclick = southAfricaLeagues2;
+button3.onclick = southAfricaLeagues3;
+button4.onclick = southAfricaLeagues4;
+button5.onclick = backToAfrica;
+text.innerText = "SELECT ANOTHER OPTION"
+}
+function englandLeagues1() {}
+function englandLeagues2() {}
+function englandLeagues3() {}
+function englandLeagues4() {}
+function portugalLeagues1() {}
+function portugalLeagues2() {}
+function portugalLeagues3() {}
+function portugalLeagues4() {}
+function spainLeagues1() {}
+function spainLeagues2() {}
+function spainLeagues3() {}
+function spainLeagues4() {}
+function franceLeagues1() {}
+function franceLeagues2() {}
+function franceLeagues3() {}
+function franceLeagues4() {}
+function brazilLeagues1() {}
+function brazilLeagues2() {}
+function brazilLeagues3() {}
+function brazilLeagues4() {}
+function mexicoLeagues1() {}
+function mexicoLeagues2() {}
+function mexicoLeagues3() {}
+function mexicoLeagues4() {}
+function usaLeagues1() {}
+function usaLeagues2() {}
+function usaLeagues3() {}
+function usaLeagues4() {}
+function japanLeagues1() {}
+function japanLeagues2() {}
+function japanLeagues3() {}
+function japanLeagues4() {}
+function chinaLeagues1() {}
+function chinaLeagues2() {}
+function chinaLeagues3() {}
+function chinaLeagues4() {}
+function unitedArabEmiratesLeagues1() {}
+function unitedArabEmiratesLeagues2() {}
+function unitedArabEmiratesLeagues3() {}
+function unitedArabEmiratesLeagues4() {}
+function koreaLeagues1() {}
+function koreaLeagues2() {}
+function koreaLeagues3() {}
+function koreaLeagues4() {}
+function moroccoLeagues1() {}
+function moroccoLeagues2() {}
+function moroccoLeagues3() {}
+function moroccoLeagues4() {}
+function egiptLeagues1() {}
+function egiptLeagues2() {}
+function egiptLeagues3() {}
+function egiptLeagues4() {}
+function angolaLeagues1() {}
+function angolaLeagues2() {}
+function angolaLeagues3() {}
+function angolaLeagues4() {}
+function southAfricaLeagues1() {}
+function southAfricaLeagues2() {}
+function southAfricaLeagues3() {}
+function southAfricaLeagues4() {}
+ //initialize buttons
+button1.onclick = leaguesFromEurope;
+button2.onclick = leaguesFromAmericas;
+button3.onclick = leaguesFromAsia;
+button4.onclick = leaguesFromAfrica;
+button5.onclick = otherLeagues;
+</script>
+<style>
+html {
+    box-sizing: border-box;
+    max-width: 150%;
+    border: none;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  max-width: 100%;
+}
+body {
+/*background-color: #0a0a23;*/
+  background-color: lightgray;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#text {
+background-color: lightgray;
+color: black;
+padding: 15px;
+width: 100%;
+height: 90vh;
+margin: 0;
+text-align: center;
+font-family: sans-serif;
+}
+#controls {
+border: none;
+color: #0a0a23;
+padding: 1%;
+width: 100%;
+}
+button {
+cursor: pointer;
+color: orangered;
+background-color: black;
+/*background-image: linear-gradient(#fecc4c, #ffac33);*/
+border: 1px solid white;
+font-size: 15px;
+width: 100%;
+padding: 2%;
+text-transform: uppercase;
+}
+</style>
+</body>
+</html>
