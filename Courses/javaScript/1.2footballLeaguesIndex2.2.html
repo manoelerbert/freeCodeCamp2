@@ -94,7 +94,7 @@ const locations = [
     },
     {
         name: "Leagues from USA",
-        "button text": ["MLS", "", "", "", "BACK"],
+        "button text": ["MLS - Major League Soccer", "USL Championship", "MLS Next Pro", "USL League One", "BACK"],
         "button functions": [usaLeagues1, usaLeagues2, usaLeagues3, usaLeagues4, backToAmericas],
         text: "SELECT AN OPTION"
     },
@@ -325,7 +325,7 @@ button5.innerText = "BACK";
 button1.onclick = englandLeagues1A2425;
 button2.onclick = englandLeagues1B2324;
 button3.onclick = englandLeagues1C2223;
-button4.onclick = englandLeagues1DOtherSeason;
+button4.onclick = englandLeagues1DOtherSeasons;
 button5.onclick = backToEngland;
 text.innerText = "SELECT ANOTHER OPTION";
 }
@@ -336,7 +336,7 @@ function englandLeagues1B2324() {}
 
 function englandLeagues1C2223() {}
 
-function englandLeagues1DOtherseason() {}
+function englandLeagues1DOtherSeasons() {}
 
 function backToEngland() {
 button1.innerText = "Premiere League";
