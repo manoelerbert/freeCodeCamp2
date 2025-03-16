@@ -265,19 +265,43 @@ const locations = [
         "button functions": [argentinaLeagues4A25, argentinaLeagues4B24, argentinaLeagues4C23, argentinaLeagues4DOtherSeasons, backToArgentina],
         text: "SELECT AN OPTION"
     },
+    {
+        name: "Brazil Leagues 1",//40
+        "button text": ["Brasileirão Serie A - 2025", "Brasileirão Serie A - 2024", "Brasileirão Serie A - 2023", "Other Seasons", "BACK"],
+        "button functions": [brazilLeagues1A25, brazilLeagues1B24, brazilLeagues1C23, brazilLeagues1DOtherSeasons, backToBrazil],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Brazil Leagues 2",//41
+        "button text": ["Brasileirão Serie B - 2025", "Brasileirão Serie B - 2024", "Brasileirão Serie B - 2023", "Other Seasons", "BACK"],
+        "button functions": [brazilLeagues2A25, brazilLeagues2B24, brazilLeagues2C23, brazilLeagues2DOtherSeasons, backToBrazil],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Brazil Leagues 3",//42
+        "button text": ["Brasileirão Serie C - 2025", "Brasileirão Serie C - 2024", "Brasileirão Serie C - 2023", "Other Seasons", "BACK"],
+        "button functions": [brazilLeagues3A25, brazilLeagues3B24, brazilLeagues3C23, brazilLeagues3DOtherSeasons, backToBrazil],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Brazil Leagues 4",//43
+        "button text": ["Copa do Brasil - 2025", "Copa do Brasil - 2024", "Copa do Brasil - 2023", "Other Seasons", "BACK"],
+        "button functions": [brazilLeagues4A25, brazilLeagues4B24, brazilLeagues4C23, brazilLeagues4DOtherSeasons, backToBrazil],
+        text: "SELECT AN OPTION"
+    },
 ];
 /*
-function argentinaLeagues4() {
-button1.innerText = "Copa de Argentina - 2025";
-button2.innerText = "Copa de Argentina - 2024";
-button3.innerText = "Copa de Argentina - 2023";
-button4.innerText = "Other Seasons";// Criar aqui novos botões
+function brazilLeagues4() {
+button1.innerText = "Copa do Brasil - 2025";
+button2.innerText = "Copa do Brasil - 2024";
+button3.innerText = "Copa do Brasil - 2023";
+button4.innerText = "Other Seasons";//Criar aqui novos botões
 button5.innerText = "BACK";
-button1.onclick = argentinaLeagues4A25;
-button2.onclick = argentinaLeagues4B24;
-button3.onclick = argentinaLeagues4C23;
-button4.onclick = argentinaLeagues4DOtherSeasons;
-button5.onclick = backToArgentina;
+button1.onclick = brazilLeagues4A25;
+button2.onclick = brazilLeagues4B24;
+button3.onclick = brazilLeagues4C23;
+button4.onclick = brazilLeagues4DOtherSeasons;
+button5.onclick = backToBrazil;
 text.innerText = "SELECT AN OPTION";
 }
 */
@@ -690,7 +714,6 @@ function franceLeagues4C2223() {}
 
 function franceLeagues4DOtherSeasons() {}
 
-// VOLTAR TRABALHO DAQUI
 function argentinaLeagues1() {
 update(locations[36]);
 }
@@ -754,17 +777,7 @@ function argentinaLeagues4C23() {}
 function argentinaLeagues4DOtherSeasons() {}
 
 function brazilLeagues1() {
-button1.innerText = "Brasileirão Serie A - 2025";
-button2.innerText = "Brasileirão Serie A - 2024";
-button3.innerText = "Brasileirão Serie A - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = brazilLeagues1A25;
-button2.onclick = brazilLeagues1B24;
-button3.onclick = brazilLeagues1C23;
-button4.onclick = brazilLeagues1DOtherSeasons;
-button5.onclick = backToBrazil;
-text.innerText = "SELECT AN OPTION";
+update(locations[40]);
 }
 
 function backToBrazil() {
@@ -790,17 +803,7 @@ function brazilLeagues1C23() {}
 function brazilLeagues1DOtherSeasons() {}
 
 function brazilLeagues2() {
-button1.innerText = "Brasileirão Serie B - 2025";
-button2.innerText = "Brasileirão Serie B - 2024";
-button3.innerText = "Brasileirão Serie B - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = brazilLeagues2A25;
-button2.onclick = brazilLeagues2B24;
-button3.onclick = brazilLeagues2C23;
-button4.onclick = brazilLeagues2DOtherSeasons;
-button5.onclick = backToBrazil;
-text.innerText = "SELECT AN OPTION";
+update(locations[41]);
 }
 
 function brazilLeagues2A25() {}
@@ -812,17 +815,7 @@ function brazilLeagues2C23() {}
 function brazilLeagues2DOtherSeasons() {}
 
 function brazilLeagues3() {
-button1.innerText = "Brasileirão Serie C - 2025";
-button2.innerText = "Brasileirão Serie C - 2024";
-button3.innerText = "Brasileirão Serie C - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = brazilLeagues3A25;
-button2.onclick = brazilLeagues3B24;
-button3.onclick = brazilLeagues3C23;
-button4.onclick = brazilLeagues3DOtherSeasons;
-button5.onclick = backToBrazil;
-text.innerText = "SELECT AN OPTION";
+update(locations[42]);
 }
 
 function brazilLeagues3A25() {}
@@ -834,17 +827,7 @@ function brazilLeagues3C23() {}
 function brazilLeagues3DOtherSeasons() {}
 
 function brazilLeagues4() {
-button1.innerText = "Copa do Brasil - 2025";
-button2.innerText = "Copa do Brasil - 2024";
-button3.innerText = "Copa do Brasil - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = brazilLeagues4A25;
-button2.onclick = brazilLeagues4B24;
-button3.onclick = brazilLeagues4C23;
-button4.onclick = brazilLeagues4DOtherSeasons;
-button5.onclick = backToBrazil;
-text.innerText = "SELECT AN OPTION";
+update(locations[43])
 }
 
 function brazilLeagues4A25() {}
@@ -854,7 +837,7 @@ function brazilLeagues4B24() {}
 function brazilLeagues4C23() {}
 
 function brazilLeagues4DOtherSeasons() {}
-
+// CONTINUAR TRABALHO DAQUI PARA LOCATIONS 44
 function mexicoLeagues1() {
 button1.innerText = "Liga MX - 2024 / 2025";
 button2.innerText = "Liga MX - 2023 / 2024";
