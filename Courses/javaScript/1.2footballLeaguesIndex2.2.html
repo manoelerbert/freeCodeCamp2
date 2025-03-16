@@ -194,19 +194,31 @@ const locations = [
         "button functions": [portugalLeagues4A2425, portugalLeagues4B2324, portugalLeagues4C2223, portugalLeagues4DOtherSeasons, backToPortugal],
         text: "SELECT AN OPTION"
     },
+    {
+        name: "Spain Leagues 1",
+        "button text": ["La Liga - 2024 / 2025", "La Liga - 2023 / 2024", "La Liga - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [spainLeagues1A2425, spainLeagues1B2324, spainLeagues1C2223, spainLeagues1DOtherSeasons, backToSpain],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Spain Leagues 2",
+        "buttton text": ["La Liga 2 - 2024 / 2025", "La Liga 2 - 2023 / 2024", "La Liga 2 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [spainLeagues2A2425, spainLeagues2B2324, spainLeagues2C2223, spainLeagues2DOtherSeasons, backToSpain],
+        text: "SELECT AN OPTION"
+    },
 ];
 /*
-function portugalLeagues4() {
-button1.innerText = "Taça da Liga de Portugal - 2024 / 2025";
-button2.innerText = "Taça da Liga de Portugal - 2023 / 2024";
-button3.innerText = "Taça da Liga de Portugal - 2022 / 2023";
+function spainLeagues2() {
+button1.innerText = "La Liga 2 - 2024 / 2025";
+button2.innerText = "La Liga 2 - 2023 / 2024";
+button3.innerText = "La Liga 2 - 2022 / 2023";
 button4.innerText = "Other Seasons";// Criar aqui novos botões
 button5.innerText = "BACK";
-button1.onclick = portugalLeagues4A2425;
-button2.onclick = portugalLeagues4B2324;
-button3.onclick = portugalLeagues4C2223;
-button4.onclick = portugalLeagues4DOtherSeasons;
-button5.onclick = backToPortugal;
+button1.onclick = spainLeagues2A2425;
+button2.onclick = spainLeagues2B2324;
+button3.onclick = spainLeagues2C2223;
+button4.onclick = spainLeagues2DOtherSeasons;
+button5.onclick = backToSpain;
 text.innerText = "SELECT AN OPTION";
 }
 */
@@ -496,17 +508,7 @@ function portugalLeagues4C2223() {}
 function portugalLeagues4DOtherSeasons() {}
 
 function spainLeagues1() {
-button1.innerText = "La Liga - 2024 / 2025";
-button2.innerText = "La Liga - 2023 / 2024";
-button3.innerText = "La Liga - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = spainLeagues1A2425;
-button2.onclick = spainLeagues1B2324;
-button3.onclick = spainLeagues1C2223;
-button4.onclick = spainLeagues1DOtherSeasons;
-button5.onclick = backToSpain;
-text.innerText = "SELECT AN OPTION";
+update(locations[28]);
 }
 
 function backToSpain() {
@@ -532,17 +534,7 @@ function spainLeagues1C2223() {}
 function spainLeagues1DOtherSeasons() {}
 
 function spainLeagues2() {
-button1.innerText = "La Liga 2 - 2024 / 2025";
-button2.innerText = "La Liga 2 - 2023 / 2024";
-button3.innerText = "La Liga 2 - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = spainLeagues2A2425;
-button2.onclick = spainLeagues2B2324;
-button3.onclick = spainLeagues2C2223;
-button4.onclick = spainLeagues2DOtherSeasons;
-button5.onclick = backToSpain;
-text.innerText = "SELECT AN OPTION";
+update(locations[29]);
 }
 
 function spainLeagues2A2425() {}
