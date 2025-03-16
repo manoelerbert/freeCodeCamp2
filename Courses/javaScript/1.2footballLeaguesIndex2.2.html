@@ -241,19 +241,43 @@ const locations = [
         "button functions": [franceLeagues4A2425, franceLeagues4B2324, franceLeagues4C2223, franceLeagues4DOtherSeasons, backToFrance],
         text: "SELECT AN OPTION"
     },
+    {
+        name: "Argentina Leagues 1",
+        "button text": ["Primera Division - 2025", "Primera Division - 2024", "Primera Division - 2023", "Other Seasons", "BACK"],
+        "button functions": [argentinaLeagues1A25, argentinaLeagues1B24, argentinaLeagues1C23, argentinaLeagues1DOtherSeasons, backToArgentina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Argentina Leagues 2",
+        "button text": ["Primera Nacional - 2025", "Primera Nacional - 2024", "Primera Nacional - 2023", "Other Seasons", "BACK"],
+        "button functions": [argentinaLeagues2A25, argentinaLeagues2B24, argentinaLeagues2C23, argentinaLeagues2DOtherSeasons, backToArgentina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Argentina Leagues 3",
+        "button text": ["Primera B - 2025", "Primera B - 2024", "Primera B - 2023", "Other Seasons", "BACK"],
+        "button functions": [argentinaLeagues3A25, argentinaLeagues3B24, argentinaLeagues3C23, argentinaLeagues3DOtherSeasons, backToArgentina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Argentina Leagues 4",
+        "button text": ["Copa de Argentina - 2025", "Copa de Argentina - 2024", "Copa de Argentina - 2023", "Other Seasons", "BACK"],
+        "button functions": [argentinaLeagues4A25, argentinaLeagues4B24, argentinaLeagues4C23, argentinaLeagues4DOtherSeasons, backToArgentina],
+        text: "SELECT AN OPTION"
+    },
 ];
 /*
-function franceLeagues4() {
-button1.innerText = "Coupe de La Ligue - 2024 / 2025";
-button2.innerText = "Coupe de La Ligue - 2023 / 2024";
-button3.innerText = "Coupe de La Ligue - 2022 / 2023";
+function argentinaLeagues4() {
+button1.innerText = "Copa de Argentina - 2025";
+button2.innerText = "Copa de Argentina - 2024";
+button3.innerText = "Copa de Argentina - 2023";
 button4.innerText = "Other Seasons";// Criar aqui novos botões
 button5.innerText = "BACK";
-button1.onclick = franceLeagues4A2425;
-button2.onclick = franceLeagues4B2324;
-button3.onclick = franceLeagues4C2223;
-button4.onclick = franceLeagues4DOtherSeasons;
-button5.onclick = backToFrance;
+button1.onclick = argentinaLeagues4A25;
+button2.onclick = argentinaLeagues4B24;
+button3.onclick = argentinaLeagues4C23;
+button4.onclick = argentinaLeagues4DOtherSeasons;
+button5.onclick = backToArgentina;
 text.innerText = "SELECT AN OPTION";
 }
 */
@@ -668,17 +692,7 @@ function franceLeagues4DOtherSeasons() {}
 
 // VOLTAR TRABALHO DAQUI
 function argentinaLeagues1() {
-button1.innerText = "Primera Division - 2025";
-button2.innerText = "Primera Division - 2024";
-button3.innerText = "Primera Division - 2023";
-button4.innerText = "Other Seasons";// Criar aqui novos botões
-button5.innerText = "BACK";
-button1.onclick = argentinaLeagues1A25;
-button2.onclick = argentinaLeagues1B24;
-button3.onclick = argentinaLeagues1C23;
-button4.onclick = argentinaLeagues1DOtherSeasons;
-button5.onclick = backToArgentina;
-text.innerText = "SELECT AN OPTION";
+update(locations[36]);
 }
 
 function backToArgentina() {
@@ -704,17 +718,7 @@ function argentinaLeagues1C23() {}
 function argentinaLeagues1DOtherSeasons() {}
 
 function argentinaLeagues2() {
-button1.innerText = "Primera Nacional - 2025";
-button2.innerText = "Primera Nacional - 2024";
-button3.innerText = "Primera Nacional - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = argentinaLeagues2A25;
-button2.onclick = argentinaLeagues2B24;
-button3.onclick = argentinaLeagues2C23;
-button4.onclick = argentinaLeagues2DOtherSeasons;
-button5.onclick = backToArgentina;
-text.innerText = "SELECT AN OPTION";
+update(locations[37]);
 }
 
 function argentinaLeagues2A25() {}
@@ -726,17 +730,7 @@ function argentinaLeagues2C23() {}
 function argentinaLeagues2DOtherSeasons() {}
 
 function argentinaLeagues3() {
-button1.innerText = "Primera B - 2025";
-button2.innerText = "Primera B - 2024";
-button3.innerText = "Primera B - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = argentinaLeagues3A25;
-button2.onclick = argentinaLeagues3B24;
-button3.onclick = argentinaLeagues3C23;
-button4.onclick = argentinaLeagues3DOtherSeasons;
-button5.onclick = backToArgentina;
-text.innerText = "SELECT AN OPTION";
+update(locations[38]);
 }
 
 function argentinaLeagues3A25() {}
@@ -748,17 +742,7 @@ function argentinaLeagues3C23() {}
 function argentinaLeagues3DOtherSeasons() {}
 
 function argentinaLeagues4() {
-button1.innerText = "Copa de Argentina - 2025";
-button2.innerText = "Copa de Argentina - 2024";
-button3.innerText = "Copa de Argentina - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = argentinaLeagues4A25;
-button2.onclick = argentinaLeagues4B24;
-button3.onclick = argentinaLeagues4C23;
-button4.onclick = argentinaLeagues4DOtherSeasons;
-button5.onclick = backToArgentina;
-text.innerText = "SELECT AN OPTION";
+update(locations[39]);
 }
 
 function argentinaLeagues4A25() {}
