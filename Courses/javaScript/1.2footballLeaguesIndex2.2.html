@@ -146,7 +146,70 @@ const locations = [
         "button functions": [southAfricaLeagues1, southAfricaLeagues2, southAfricaLeagues3, southAfricaLeagues4, backToAfrica],
         text: "SELECT AN OPTION"
     },
+    {
+        name: "England Leagues 1",
+        "button text": ["Premiere League - 2024 / 2025", "Premiere League - 2023 / 2024", "Premiere League - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [englandLeagues1A2425, englandLeagues1B2324, englandLeagues1C2223, englandLeagues1DOtherSeasons, backToEngland],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "England Leagues 2",
+        "button text": ["Championship - 2024 / 2025", "Championship - 2023 / 2024", "Championship - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [englandLeagues2A2425, englandLeagues2B2324, englandLeagues2C2223, englandLeagues2DOtherSeasons, backToEngland],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "England Leagues 3",
+        "button text": ["English Cup - 2024 / 2025", "English Cup - 2023 / 2024", "English Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [englandLeagues3A2425, englandLeagues3B2324, englandLeagues3C2223, englandLeagues3DOtherSeasons, backToEngland],
+        "text": "SELECT AN OPTION"
+    },
+    {
+        name: "England Leagues 4",
+        "button text": ["English League Cup - 2024 / 2025", "English League Cup - 2023 / 2024", "English League Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [englandLeagues3A2425, englandLeagues3B2324, englandLeagues3C2223, englandLeagues3DOtherSeasons, backToEngland],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Portugal Leagues 1",
+        "button text": ["Liga Portugal - 2024 / 2025", "Liga Portugal - 2023 / 2024", "Liga Portugal - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [portugalLeagues1A2425, portugalLeagues1B2324, portugalLeagues1C2223, portugalLeagues1DOtherSeasons, backToPortugal],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Portugal Leagues 2",
+        "button text": ["Liga Portugal 2 - 2024 / 2025", "Liga Portugal 2 - 2023 / 2024", "Liga Portugal 2 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [portugalLeagues2A2425, portugalLeagues2B2324, portugalLeagues2C2223, portugalLeagues2DOtherSeasons, backToPortugal],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Portugal Leagues 3",
+        "button text": ["Taça de Portugal - 2024 / 2025", "Taça de Portugal - 2023 / 2024", "Taça de Portugal - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [portugalLeagues3A2425, portugalLeagues3B2324, portugalLeagues3C2223, portugalLeagues3DOtherSeasons, backToPortugal],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Portugal Leagues 4",
+        "button text": ["Taça da Liga de Portugal - 2024 / 2025", "Taça da Liga de Portugal - 2023 / 2024", "Taça da Liga de Portugal - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [portugalLeagues4A2425, portugalLeagues4B2324, portugalLeagues4C2223, portugalLeagues4DOtherSeasons, backToPortugal],
+        text: "SELECT AN OPTION"
+    },
 ];
+/*
+function portugalLeagues4() {
+button1.innerText = "Taça da Liga de Portugal - 2024 / 2025";
+button2.innerText = "Taça da Liga de Portugal - 2023 / 2024";
+button3.innerText = "Taça da Liga de Portugal - 2022 / 2023";
+button4.innerText = "Other Seasons";// Criar aqui novos botões
+button5.innerText = "BACK";
+button1.onclick = portugalLeagues4A2425;
+button2.onclick = portugalLeagues4B2324;
+button3.onclick = portugalLeagues4C2223;
+button4.onclick = portugalLeagues4DOtherSeasons;
+button5.onclick = backToPortugal;
+text.innerText = "SELECT AN OPTION";
+}
+*/
 
 function update(location) {
 button1.innerText = location["button text"][0];
@@ -317,17 +380,7 @@ update(locations[19]);
 }
 
 function englandLeagues1() {
-button1.innerText = "Premiere League - 2024 / 2025";
-button2.innerText = "Premiere League - 2023 / 2024";
-button3.innerText = "Premiere League - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = englandLeagues1A2425;
-button2.onclick = englandLeagues1B2324;
-button3.onclick = englandLeagues1C2223;
-button4.onclick = englandLeagues1DOtherSeasons;
-button5.onclick = backToEngland;
-text.innerText = "SELECT AN OPTION";
+update(locations[20]);
 }
 
 function englandLeagues1A2425() {}
@@ -353,17 +406,7 @@ text.innerText = "SELECT AN OPTION";
 }
 
 function englandLeagues2() {
-button1.innerText = "Championship - 2024 / 2025";
-button2.innerText = "Championship - 2023 / 2024";
-button3.innerText = "Championship - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = englandLeagues2A2425;
-button2.onclick = englandLeagues2B2324;
-button3.onclick = englandLeagues2C2223;
-button4.onclick = englandLeagues2DOtherSeasons;
-button5.onclick = backToEngland;
-text.innerText = "SELECT AN OPTION";
+update(locations[21]);
 }
 
 function englandLeagues2A2425() {}
@@ -375,17 +418,7 @@ function englandLeagues2C2223() {}
 function englandLeagues2DOtherSeasons() {}
 
 function englandLeagues3() {
-button1.innerText = "English Cup - 2024 / 2025";
-button2.innerText = "English Cup - 2023 / 2024";
-button3.innerText = "English Cup - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = englandLeagues3A2425;
-button2.onclick = englandLeagues3B2324;
-button3.onclick = englandLeagues3C2223;
-button4.onclick = englandLeagues3DOtherSeasons;
-button5.onclick = backToEngland;
-text.innerText = "SELECT AN OPTION";
+update(locations[22]);
 }
 
 function englandLeagues3A2425() {}
@@ -397,31 +430,11 @@ function englandLeagues3C2223() {}
 function englandLeagues3DOtherSeasons() {}
 
 function englandLeagues4() {
-button1.innerText = "English League Cup - 2024 / 2025";
-button2.innerText = "English League Cup - 2023 / 2024";
-button3.innerText = "English League Cup - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = englandLeagues3A2425;
-button2.onclick = englandLeagues3B2324;
-button3.onclick = englandLeagues3C2223;
-button4.onclick = englandLeagues3DOtherSeasons;
-button5.onclick = backToEngland;
-text.innerText = "SELECT AN OPTION";
+update(locations[23]);
 }
 
 function portugalLeagues1() {
-button1.innerText = "Liga Portugal - 2024 / 2025";
-button2.innerText = "Liga Portugal - 2023 / 2024";
-button3.innerText = "Liga Portugal - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = portugalLeagues1A2425;
-button2.onclick = portugalLeagues1B2324;
-button3.onclick = portugalLeagues1C2223;
-button4.onclick = portugalLeagues1DOtherSeasons;
-button5.onclick = backToPortugal;
-text.innerText = "SELECT AN OPTION";
+update(locations[24]);
 }
 
 function backToPortugal() {
@@ -447,17 +460,7 @@ function portugalLeagues1C2223() {}
 function portugalLeagues1DOtherSeasons() {}
 
 function portugalLeagues2() {
-button1.innerText = "Liga Portugal 2 - 2024 / 2025";
-button2.innerText = "Liga Portugal 2 - 2023 / 2024";
-button3.innerText = "Liga Portugal 2 - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = portugalLeagues2A2425;
-button2.onclick = portugalLeagues2B2324;
-button3.onclick = portugalLeagues2C2223;
-button4.onclick = portugalLeagues2DOtherSeasons;
-button5.onclick = backToPortugal;
-text.innerText = "SELECT AN OPTION";
+update(locations[25]);
 }
 
 function portugalLeagues2A2425() {}
@@ -469,17 +472,7 @@ function portugalLeagues2C2223() {}
 function portugalLeagues2DOtherSeasons() {}
 
 function portugalLeagues3() {
-button1.innerText = "Taça de Portugal - 2024 / 2025";
-button2.innerText = "Taça de Portugal - 2023 / 2024";
-button3.innerText = "Taça de Portugal - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = portugalLeagues3A2425;
-button2.onclick = portugalLeagues3B2324;
-button3.onclick = portugalLeagues3C2223;
-button4.onclick = portugalLeagues3DOtherSeasons;
-button5.onclick = backToPortugal;
-text.innerText = "SELECT AN OPTION";
+update(locations[26]);
 }
 
 function portugalLeagues3A2425() {}
@@ -491,17 +484,7 @@ function portugalLeagues3C2223() {}
 function portugalLeagues3DOtherSeasons() {}
 
 function portugalLeagues4() {
-button1.innerText = "Taça da Liga de Portugal - 2024 / 2025";
-button2.innerText = "Taça da Liga de Portugal - 2023 / 2024";
-button3.innerText = "Taça da Liga de Portugal - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = portugalLeagues4A2425;
-button2.onclick = portugalLeagues4B2324;
-button3.onclick = portugalLeagues4C2223;
-button4.onclick = portugalLeagues4DOtherSeasons;
-button5.onclick = backToPortugal;
-text.innerText = "SELECT AN OPTION";
+update(locations[27]);
 }
 
 function portugalLeagues4A2425() {}
@@ -1918,9 +1901,27 @@ function southAfricaLeagues3C2223() {}
 
 function southAfricaLeagues3DOtherSeasons() {}
 
-function southAfricaLeagues4() {}
+function southAfricaLeagues4() {
+button1.innerText = "League Cup - 2024 / 2025";
+button2.innerText = "League Cup - 2023 / 2024";
+button3.innerText = "League Cup - 2022 / 2023";
+button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
+button5.innerText = "BACK";
+button1.onclick = southAfricaLeagues4A2425;
+button2.onclick = southAfricaLeagues4B2324;
+button3.onclick = southAfricaLeagues4C2223;
+button4.onclick = southAfricaLeagues4DOtherSeasons;
+button5.onclick = backToSouthAfrica;
+text.innerText = "SELECT AN OPTION";
+}
 
+function southAfricaLeagues4A2425() {}
 
+function southAfricaLeagues4B2324() {}
+
+function southAfricaLeagues4C2223() {}
+
+function southAfricaLeagues4DOtherSeasons() {}
 
  //initialize buttons
 button1.onclick = leaguesFromEurope;
