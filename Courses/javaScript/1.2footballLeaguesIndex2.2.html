@@ -202,23 +202,58 @@ const locations = [
     },
     {
         name: "Spain Leagues 2",
-        "buttton text": ["La Liga 2 - 2024 / 2025", "La Liga 2 - 2023 / 2024", "La Liga 2 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button text": ["La Liga 2 - 2024 / 2025", "La Liga 2 - 2023 / 2024", "La Liga 2 - 2022 / 2023", "Other Seasons", "BACK"],
         "button functions": [spainLeagues2A2425, spainLeagues2B2324, spainLeagues2C2223, spainLeagues2DOtherSeasons, backToSpain],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Spain Leagues 3",
+        "button text": ["Copa del Rey - 2024 / 2025", "Copa del Rey - 2023 / 2024", "Copa del Rey - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [spainLeagues3A2425, spainLeagues3B2324, spainLeagues3C2223, spainLeagues3DOtherSeasons, backToSpain],
+    },
+    {
+        name: "Spain Leagues 4",
+        "button text": ["Copa de La Liga - 2024 / 2025", "Copa de La Liga - 2023 / 2024", "Copa de La Liga - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [spainLeagues4A2425, spainLeagues4B2324, spainLeagues4C2223, spainLeagues4DOtherSeasons, backToSpain],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "France Leagues 1",
+        "button text": ["Ligue 1 - 2024 / 2025", "Ligue 1 - 2023 / 2024", "Ligue 1 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [franceLeagues1A2425, franceLeagues1B2324, franceLeagues1C2223, franceLeagues1DOtherSeasons, backToFrance],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "France Leagues 2",
+        "button text": ["Ligue 2 - 2024 / 2025", "Ligue 2 - 2023 / 2024", "Ligue 2 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [franceLeagues2A2425, franceLeagues2B2324, franceLeagues2C2223, franceLeagues2DOtherSeasons, backToFrance],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "France Leagues 3",
+        "button text": ["Coupe de France - 2024 / 2025", "Coupe de France - 2023 / 2024", "Coupe de France - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [franceLeagues3A2425, franceLeagues3B2324, franceLeagues3C2223, franceLeagues3DOtherSeasons, backToFrance],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "France Leagues 4",
+        "button text": ["Coupe de La Ligue - 2024 / 2025", "Coupe de La Ligue - 2023 / 2024", "Coupe de La Ligue - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [franceLeagues4A2425, franceLeagues4B2324, franceLeagues4C2223, franceLeagues4DOtherSeasons, backToFrance],
         text: "SELECT AN OPTION"
     },
 ];
 /*
-function spainLeagues2() {
-button1.innerText = "La Liga 2 - 2024 / 2025";
-button2.innerText = "La Liga 2 - 2023 / 2024";
-button3.innerText = "La Liga 2 - 2022 / 2023";
+function franceLeagues4() {
+button1.innerText = "Coupe de La Ligue - 2024 / 2025";
+button2.innerText = "Coupe de La Ligue - 2023 / 2024";
+button3.innerText = "Coupe de La Ligue - 2022 / 2023";
 button4.innerText = "Other Seasons";// Criar aqui novos botões
 button5.innerText = "BACK";
-button1.onclick = spainLeagues2A2425;
-button2.onclick = spainLeagues2B2324;
-button3.onclick = spainLeagues2C2223;
-button4.onclick = spainLeagues2DOtherSeasons;
-button5.onclick = backToSpain;
+button1.onclick = franceLeagues4A2425;
+button2.onclick = franceLeagues4B2324;
+button3.onclick = franceLeagues4C2223;
+button4.onclick = franceLeagues4DOtherSeasons;
+button5.onclick = backToFrance;
 text.innerText = "SELECT AN OPTION";
 }
 */
@@ -546,17 +581,7 @@ function spainLeagues2C2223() {}
 function spainLeagues2DOtherSeasons() {}
 
 function spainLeagues3() {
-button1.innerText = "Copa del Rey - 2024 / 2025";
-button2.innerText = "Copa del Rey - 2023 / 2024";
-button3.innerText = "Copa del Rey - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = spainLeagues3A2425;
-button2.onclick = spainLeagues3B2324;
-button3.onclick = spainLeagues3C2223;
-button4.onclick = spainLeagues3DOtherSeasons;
-button5.onclick = backToSpain;
-text.innerText = "SELECT AN OPTION";
+update(locations[30]);
 }
 
 function spainLeagues3A2425() {}
@@ -568,17 +593,7 @@ function spainLeagues3C2223() {}
 function spainLeagues3DOtherSeasons() {}
 
 function spainLeagues4() {
-button1.innerText = "Copa de La Liga - 2024 / 2025";
-button2.innerText = "Copa de La Liga - 2023 / 2024";
-button3.innerText = "Copa de La Liga - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = spainLeagues4A2425;
-button2.onclick = spainLeagues4B2324;
-button3.onclick = spainLeagues4C2223;
-button4.onclick = spainLeagues4DOtherSeasons;
-button5.onclick = backToSpain;
-text.innerText = "SELECT AN OPTION";
+update(locations[31]);
 }
 
 function spainLeagues4A2425() {}
@@ -590,17 +605,7 @@ function spainLeagues4C2223() {}
 function spainLeagues4DOtherSeasons() {}
 
 function franceLeagues1() {
-button1.innerText = "Ligue 1 - 2024 / 2025";
-button2.innerText = "Ligue 1 - 2023 / 2024";
-button3.innerText = "Ligue 1 - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = franceLeagues1A2425;
-button2.onclick = franceLeagues1B2324;
-button3.onclick = franceLeagues1C2223;
-button4.onclick = franceLeagues1DOtherSeasons;
-button5.onclick = backToFrance;
-text.innerText = "SELECT AN OPTION";
+update(locations[32]);
 }
 
 function backToFrance() {
@@ -626,17 +631,7 @@ function franceLeagues1C2223() {}
 function franceLeagues1DOtherSeasons() {}
 
 function franceLeagues2() {
-button1.innerText = "Ligue 2 - 2024 / 2025";
-button2.innerText = "Ligue 2 - 2023 / 2024";
-button3.innerText = "Ligue 2 - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = franceLeagues2A2425;
-button2.onclick = franceLeagues2B2324;
-button3.onclick = franceLeagues2C2223;
-button4.onclick = franceLeagues2DOtherSeasons;
-button5.onclick = backToFrance;
-text.innerText = "SELECT AN OPTION";
+update(locations[33]);
 }
 
 function franceLeagues2A2425() {}
@@ -648,17 +643,7 @@ function franceLeagues2C2223() {}
 function franceLeagues2DOtherSeasons() {}
 
 function franceLeagues3() {
-button1.innerText = "Coupe de France - 2024 / 2025";
-button2.innerText = "Coupe de France - 2023 / 2024";
-button3.innerText = "Coupe de France - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = franceLeagues3A2425;
-button2.onclick = franceLeagues3B2324;
-button3.onclick = franceLeagues3C2223;
-button4.onclick = franceLeagues3DOtherSeasons;
-button5.onclick = backToFrance;
-text.innerText = "SELECT AN OPTION";
+update(locations[34]);
 }
 
 function franceLeagues3A2425() {}
@@ -670,17 +655,7 @@ function franceLeagues3C2223() {}
 function franceLeagues3DOtherSeasons() {}
 
 function franceLeagues4() {
-button1.innerText = "Coupe de La Ligue - 2024 / 2025";
-button2.innerText = "Coupe de La Ligue - 2023 / 2024";
-button3.innerText = "Coupe de La Ligue - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = franceLeagues4A2425;
-button2.onclick = franceLeagues4B2324;
-button3.onclick = franceLeagues4C2223;
-button4.onclick = franceLeagues4DOtherSeasons;
-button5.onclick = backToFrance;
-text.innerText = "SELECT AN OPTION";
+update(locations[35]);
 }
 
 function franceLeagues4A2425() {}
