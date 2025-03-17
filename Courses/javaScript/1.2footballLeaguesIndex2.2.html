@@ -313,19 +313,43 @@ const locations = [
         "button functions": [mexicoLeagues4A2425, mexicoLeagues4B2324, mexicoLeagues4C2223, mexicoLeagues4DOtherSeasons, backToMexico],
         text: "SELECT AN OPTION"
     },
+    {
+        name: "USA Leagues 1",//48
+        "button text": ["MLS - Major League Soccer - 2025", "MLS - Major League Soccer - 2024", "MLS - Major League Soccer - 2023", "Other Seasons", "BACK"],
+        "button functions": [usaLeagues1A25, usaLeagues1B24, usaLeagues1C23, usaLeagues1DOtherSeasons, backToUsa],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "USA Leagues 2",//49
+        "button text": ["USL Championship - 2025", "USL Championship - 2024", "USL Championship - 2023", "Other Seasons", "BACK"],
+        "button functions": [usaLeagues2A25, usaLeagues2B24, usaLeagues2C23, usaLeagues2DOtherSeasons, backToUsa],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "USA Leagues 3",//50
+        "button text": ["MLS Next Pro - 2025", "MLS Next Pro - 2024", "MLS Next Pro - 2023", "Other Seasons", "BACK"],
+        "button functions": [usaLeagues3A25, usaLeagues3B24, usaLeagues3C23, usaLeagues3DOtherSeasons, backToUsa],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "USA Leagues 4",//51
+        "button text": ["USL League One - 2025", "USL League One - 2024", "USL League One - 2023", "Other Seasons", "BACK"],
+        "button functions": [usaLeagues4A25, usaLeagues4B24, usaLeagues4C23, usaLeagues4DOtherSeasons, backToUsa],
+        text: "SELECT AN OPTION"
+    },
 ];
 /*
-function mexicoLeagues4() {
-button1.innerText = "Copa MX - 2024 / 2025";
-button2.innerText = "Copa MX - 2023 / 2024";
-button3.innerText = "Copa MX - 2022 / 2023";
+function usaLeagues4() {
+button1.innerText = "USL League One - 2025";
+button2.innerText = "USL League One - 2024";
+button3.innerText = "USL League One - 2023";
 button4.innerText = "Other Seasons";//Criar aqui novos botões
 button5.innerText = "BACK";
-button1.onclick = mexicoLeagues4A2425;
-button2.onclick = mexicoLeagues4B2324;
-button3.onclick = mexicoLeagues4C2223;
-button4.onclick = mexicoLeagues4DOtherSeasons;
-button5.onclick = backToMexico;
+button1.onclick = usaLeagues4A25;
+button2.onclick = usaLeagues4B24;
+button3.onclick = usaLeagues4C23;
+button4.onclick = usaLeagues4DOtherSeasons;
+button5.onclick = backToUsa;
 text.innerText = "SELECT AN OPTION";
 }
 */
@@ -925,17 +949,7 @@ function mexicoLeagues4C2223() {}
 function mexicoLeagues4DOtherSeasons() {}
 
 function usaLeagues1() {
-button1.innerText = "MLS - Major League Soccer - 2025";
-button2.innerText = "MLS - Major League Soccer - 2024";
-button3.innerText = "MLS - Major League Soccer - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = usaLeagues1A25;
-button2.onclick = usaLeagues1B24;
-button3.onclick = usaLeagues1C23;
-button4.onclick = usaLeagues1DOtherSeasons;
-button5.onclick = backToUsa;
-text.innerText = "SELECT AN OPTION";
+update(locations[48]);
 }
 
 function backToUsa() {
@@ -961,17 +975,7 @@ function usaLeagues1C23() {}
 function usaLeagues1DOtherSeasons() {}
 
 function usaLeagues2() {
-button1.innerText = "USL Championship - 2025";
-button2.innerText = "USL Championship - 2024";
-button3.innerText = "USL Championship - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = usaLeagues2A25;
-button2.onclick = usaLeagues2B24;
-button3.onclick = usaLeagues2C23;
-button4.onclick = usaLeagues2DOtherSeasons;
-button5.onclick = backToUsa;
-text.innerText = "SELECT AN OPTION";
+update(locations[49]);
 }
 
 function usaLeagues2A25() {}
@@ -983,17 +987,7 @@ function usaLeagues2C23() {}
 function usaLeagues2DOtherSeasons() {}
 
 function usaLeagues3() {
-button1.innerText = "MLS Next Pro - 2025";
-button2.innerText = "MLS Next Pro - 2024";
-button3.innerText = "MLS Next Pro - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = usaLeagues3A25;
-button2.onclick = usaLeagues3B24;
-button3.onclick = usaLeagues3C23;
-button4.onclick = usaLeagues3DOtherSeasons;
-button5.onclick = backToUsa;
-text.innerText = "SELECT AN OPTION";
+update(locations[50]);
 }
 
 function usaLeagues3A25() {}
@@ -1005,17 +999,7 @@ function usaLeagues3C23() {}
 function usaLeagues3DOtherSeasons() {}
 
 function usaLeagues4() {
-button1.innerText = "USL League One - 2025";
-button2.innerText = "USL League One - 2024";
-button3.innerText = "USL League One - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = usaLeagues4A25;
-button2.onclick = usaLeagues4B24;
-button3.onclick = usaLeagues4C23;
-button4.onclick = usaLeagues4DOtherSeasons;
-button5.onclick = backToUsa;
-text.innerText = "SELECT AN OPTION";
+update(locations[51]);
 }
 
 function usaLeagues4A25() {}
@@ -1026,6 +1010,7 @@ function usaLeagues4C23() {}
 
 function usaLeagues4DOtherSeasons() {}
 
+//CONTINUAR TRABALHO DAQUI COM LOCATIONS 52
 function japanLeagues1() {
 button1.innerText = "J1 League - 2025";
 button2.innerText = "J1 League - 2024";
