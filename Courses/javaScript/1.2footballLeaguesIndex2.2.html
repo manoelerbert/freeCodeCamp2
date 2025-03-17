@@ -337,20 +337,68 @@ const locations = [
         "button functions": [usaLeagues4A25, usaLeagues4B24, usaLeagues4C23, usaLeagues4DOtherSeasons, backToUsa],
         text: "SELECT AN OPTION"
     },
+    {
+        name: "Japan Leagues 1",//52
+        "button text": ["J1 League - 2025", "J1 League - 2024", "J1 League - 2023", "Other Seasons", "BACK"],
+        "button functions": [japanLeagues1A25, japanLeagues1B24, japanLeagues1C23, japanLeagues1DOtherSeasons, backToJapan],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Japan Leagues 2",//53
+        "button text": ["J2 League - 2025", "J2 League - 2024", "J2 League - 2023", "Other Seasons", "BACK"],
+        "button functions": [japanLeagues2A25, japanLeagues2B24, japanLeagues2C23, japanLeagues2DOtherSeasons, backToJapan],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Japan Leagues 3",//54
+        "button text": ["J3 League - 2025", "J3 League - 2024", "J3 League - 2023", "Other Seasons", "BACK"],
+        "button functions": [japanLeagues3A25, japanLeagues3B24, japanLeagues3C23, japanLeagues3DOtherSeasons, backToJapan],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Japan Leagues 4",//55
+        "button text": ["Emperor´s Cup - 2025", "Emperor´s Cup - 2024", "Emperor´s Cup - 2023", "Other Seasons", "BACK"],
+        "button functions": [japanLeagues4A25, japanLeagues4B24, japanLeagues4C23, japanLeagues4DOtherSeasons, backToJapan],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "China Leagues 1",//56
+        "button text": ["CFA Super League - 2025", "CFA Super League - 2024", "CFA Super League - 2023", "Other Seasons", "BACK"],
+        "button functions": [chinaLeagues1A25, chinaLeagues1B24, chinaLeagues1C23, chinaLeagues1DOtherSeasons, backToChina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "China Leagues 2",//57
+        "button text": ["CFA China League - 2025", "CFA China League - 2024", "CFA China League - 2023", "Other Seasons", "BACK"],
+        "button functions": [chinaLeagues2A25, chinaLeagues2B24, chinaLeagues2C23, chinaLeagues2DOtherSeasons, backToChina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "China Leagues 3",//58
+        "button text": ["CFA China League 2 - 2025", "CFA China League 2 - 2024", "CFA China League 2 - 2023", "Other Seasons", "BACK"],
+        "button functions": [chinaLeagues3A25, chinaLeagues3B24, chinaLeagues3C23, chinaLeagues3DOtherSeasons, backToChina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "China Leagues 4",//59
+        "button text": ["China Cup - 2025", "China Cup - 2024", "China Cup - 2023", "Other Seasons", "BACK"],
+        "button functions": [chinaLeagues4A25, chinaLeagues4B24, chinaLeagues4C23, chinaLeagues4DOtherSeasons, backToChina],
+        text: "SELECT AN OPTION"
+    },
 ];
 /*
-function usaLeagues4() {
-button1.innerText = "USL League One - 2025";
-button2.innerText = "USL League One - 2024";
-button3.innerText = "USL League One - 2023";
+function chinaLeagues4() {
+button1.innerText = "China Cup - 2025";
+button2.innerText = "China Cup - 2024";
+button3.innerText = "China Cup - 2023";
 button4.innerText = "Other Seasons";//Criar aqui novos botões
 button5.innerText = "BACK";
-button1.onclick = usaLeagues4A25;
-button2.onclick = usaLeagues4B24;
-button3.onclick = usaLeagues4C23;
-button4.onclick = usaLeagues4DOtherSeasons;
-button5.onclick = backToUsa;
-text.innerText = "SELECT AN OPTION";
+button1.onclick = chinaLeagues4A25;
+button2.onclick = chinaLeagues4B24;
+button3.onclick = chinaLeagues4C23;
+button4.onclick = chinaLeagues4DOtherSeasons;
+button5.onclick = backToChina;
+text.innerText = "SELECT AN OPTION"
 }
 */
 
@@ -1010,19 +1058,8 @@ function usaLeagues4C23() {}
 
 function usaLeagues4DOtherSeasons() {}
 
-//CONTINUAR TRABALHO DAQUI COM LOCATIONS 52
 function japanLeagues1() {
-button1.innerText = "J1 League - 2025";
-button2.innerText = "J1 League - 2024";
-button3.innerText = "J1 League - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = japanLeagues1A25;
-button2.onclick = japanLeagues1B24;
-button3.onclick = japanLeagues1C23;
-button4.onclick = japanLeagues1DOtherSeasons;
-button5.onclick = backToJapan;
-text.innerText = "SELECT AN OPTION";
+update(locations[52]);
 }
 
 function backToJapan() {
@@ -1048,17 +1085,7 @@ function japanLeagues1C23() {}
 function japanLeagues1DOtherSeasons() {}
 
 function japanLeagues2() {
-button1.innerText = "J2 League - 2025";
-button2.innerText = "J2 League - 2024";
-button3.innerText = "J2 League - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = japanLeagues2A25;
-button2.onclick = japanLeagues2B24;
-button3.onclick = japanLeagues2C23;
-button4.onclick = japanLeagues2DOtherSeasons;
-button5.onclick = backToJapan;
-text.innerText = "SELECT AN OPTION";
+update(locations[53]);
 }
 
 function japanLeagues2A25() {}
@@ -1070,17 +1097,7 @@ function japanLeagues2C23() {}
 function japanLeagues2DOtherSeasons() {}
 
 function japanLeagues3() {
-button1.innerText = "J3 League - 2025";
-button2.innerText = "J3 League - 2024";
-button3.innerText = "J3 League - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = japanLeagues3A25;
-button2.onclick = japanLeagues3B24;
-button3.onclick = japanLeagues3C23;
-button4.onclick = japanLeagues3DOtherSeasons;
-button5.onclick = backToJapan;
-text.innerText = "SELECT AN OPTION";
+update(locations[54]);
 }
 
 function japanLeagues3A25() {}
@@ -1092,17 +1109,7 @@ function japanLeagues3C23() {}
 function japanLeagues3DOtherSeasons() {}
 
 function japanLeagues4() {
-button1.innerText = "Emperor´s Cup - 2025";
-button2.innerText = "Emperor´s Cup - 2024";
-button3.innerText = "Emperor´s Cup - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = japanLeagues4A25;
-button2.onclick = japanLeagues4B24;
-button3.onclick = japanLeagues4C23;
-button4.onclick = japanLeagues4DOtherSeasons;
-button5.onclick = backToJapan;
-text.innerText = "SELECT AN OPTION";
+update(locations[55]);
 }
 
 function japanLeagues4A25() {}
@@ -1114,17 +1121,7 @@ function japanLeagues4C23() {}
 function japanLeagues4DOtherSeasons() {}
 
 function chinaLeagues1() {
-button1.innerText = "CFA Super League - 2025";
-button2.innerText = "CFA Super League - 2024";
-button3.innerText = "CFA Super League - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = chinaLeagues1A25;
-button2.onclick = chinaLeagues1B24;
-button3.onclick = chinaLeagues1C23;
-button4.onclick = chinaLeagues1DOtherSeasons;
-button5.onclick = backToChina;
-text.innerText = "SELECT AN OPTION";
+update(locations[56]);
 }
 
 function backToChina() {
@@ -1150,17 +1147,7 @@ function chinaLeagues1C23() {}
 function chinaLeagues1DOtherSeasons() {}
 
 function chinaLeagues2() {
-button1.innerText = "CFA China League - 2025";
-button2.innerText = "CFA China League - 2024";
-button3.innerText = "CFA China League - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = chinaLeagues2A25;
-button2.onclick = chinaLeagues2B24;
-button3.onclick = chinaLeagues2C23;
-button4.onclick = chinaLeagues2DOtherSeasons;
-button5.onclick = backToChina;
-text.innerText = "SELECT AN OPTION";
+update(locations[57]);
 }
 
 function chinaLeagues2A25() {}
@@ -1172,17 +1159,7 @@ function chinaLeagues2C23() {}
 function chinaLeagues2DOtherSeasons() {}
 
 function chinaLeagues3() {
-button1.innerText = "CFA China League 2 - 2025";
-button2.innerText = "CFA China League 2 - 2024";
-button3.innerText = "CFA China League 2 - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = chinaLeagues3A25;
-button2.onclick = chinaLeagues3B24;
-button3.onclick = chinaLeagues3C23;
-button4.onclick = chinaLeagues3DOtherSeasons;
-button5.onclick = backToChina;
-text.innerText = "SELECT AN OPTION";
+update(locations[58]);
 }
 
 function chinaLeagues3A25() {}
@@ -1194,17 +1171,7 @@ function chinaLeagues3C23() {}
 function chinaLeagues3DOtherSeasons() {}
 
 function chinaLeagues4() {
-button1.innerText = "China Cup - 2025";
-button2.innerText = "China Cup - 2024";
-button3.innerText = "China Cup - 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = chinaLeagues4A25;
-button2.onclick = chinaLeagues4B24;
-button3.onclick = chinaLeagues4C23;
-button4.onclick = chinaLeagues4DOtherSeasons;
-button5.onclick = backToChina;
-text.innerText = "SELECT AN OPTION"
+update(locations[59]);
 }
 
 function chinaLeagues4A25() {}
