@@ -481,19 +481,68 @@ const locations = [
         "button functions": [egiptLeagues4A2425, egiptLeagues4B2324, egiptLeagues4C2223, egiptLeagues4DOtherSeasons, backToEgipt],
         text: "SELECT AN OPTION"
     },
-];
+    {
+        name: "Angola Leagues 1",//76
+        "button text": ["Girabola League 1 - 2024 / 2025", "Girabola League 1 - 2023 / 2024", "Girabola League 1 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [angolaLeagues1A2425, angolaLeagues1B2324, angolaLeagues1C2223, angolaLeagues1DOtherSeasons, backToAngola],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Angola Leagues 2",//77
+        "button text": ["Segundona League 2 - 2024 / 2025", "Segundona League 2 - 2023 / 2024", "Segundona League 2 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [angolaLeagues2A2425, angolaLeagues2B2324, angolaLeagues2C2223, angolaLeagues2DOtherSeasons, backToAngola],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Angola Leagues 3",//78
+        "button text": ["Campeonato Provincial League 3 - 2024 / 2025", "Campeonato Provincial League 3 - 2023 / 2024", "Campeonato Provincial League 3 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [angolaLeagues3A2425, angolaLeagues3B2324, angolaLeagues3C2223, angolaLeagues3DOtherSeasons, backToAngola],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Angola Leagues 4",//79
+        "button text": ["Taça de Angola - 2024 / 2025", "Taça de Angola - 2023 / 2024", "Taça de Angola - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [angolaLeagues4A2425, angolaLeagues4B2324, angolaLeagues4C2223, angolaLeagues4DOtherSeasons, backToAngola],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "South Africa Leagues 1",//80
+        "button text": ["Premiere Soccer League - 2024 / 2025", "Premiere Soccer League - 2023 / 2024", "Premiere Soccer League - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [southAfricaLeagues1A2425, southAfricaLeagues1B2324, southAfricaLeagues1C2223, southAfricaLeagues1DOtherSeasons, backToSouthAfrica],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "South Africa Leagues 2",//81
+        "button text": ["National First Division - 2024 / 2025", "National First Division - 2023 / 2024", "National First Division - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [southAfricaLeagues2A2425, southAfricaLeagues2B2324, southAfricaLeagues2C2223, southAfricaLeagues2DOtherSeasons, backToSouthAfrica],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "South Africa Leagues 3",//82
+        "button text": ["South Africa Cup - 2024 / 2025", "South Africa Cup - 2023 / 2024", "South Africa Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [southAfricaLeagues3A2425, southAfricaLeagues3B2324, southAfricaLeagues3C2223, southAfricaLeagues3DOtherSeasons, backToSouthAfrica],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "South Africa Leagues 4",//83
+        "button text": ["League Cup - 2024 / 2025", "League Cup - 2023 / 2024", "League Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [southAfricaLeagues4A2425, southAfricaLeagues4B2324, southAfricaLeagues4C2223, southAfricaLeagues4DOtherSeasons, backToSouthAfrica],
+        text: "SELECT AN OPTION"
+    },
+]
+    
 /*
-function egiptLeagues4() {
+function southAfricaLeagues4() {
 button1.innerText = "League Cup - 2024 / 2025";
 button2.innerText = "League Cup - 2023 / 2024";
 button3.innerText = "League Cup - 2022 / 2023";
 button4.innerText = "Other Seasons";//Criar aqui novos botões
 button5.innerText = "BACK";
-button1.onclick = egiptLeagues4A2425;
-button2.onclick = egiptLeagues4B2324;
-button3.onclick = egiptLeagues4C2223;
-button4.onclick = egiptLeagues4DOtherSeasons;
-button5.onclick = backToEgipt;
+button1.onclick = southAfricaLeagues4A2425;
+button2.onclick = southAfricaLeagues4B2324;
+button3.onclick = southAfricaLeagues4C2223;
+button4.onclick = southAfricaLeagues4DOtherSeasons;
+button5.onclick = backToSouthAfrica;
 text.innerText = "SELECT AN OPTION";
 }
 */
@@ -1527,17 +1576,7 @@ function egiptLeagues4C2223() {}
 function egiptLeagues4DOtherSeasons() {}
 
 function angolaLeagues1() {
-button1.innerText = "Girabola League 1 - 2024 / 2025";
-button2.innerText = "Girabola League 1 - 2023 / 2024";
-button3.innerText = "Girabola League 1 - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = angolaLeagues1A2425;
-button2.onclick = angolaLeagues1B2324;
-button3.onclick = angolaLeagues1C2223;
-button4.onclick = angolaLeagues1DOtherSeasons;
-button5.onclick = backToAngola;
-text.innerText = "SELECT AN OPTION";
+update(locations[76]);
 }
 
 function backToAngola() {
@@ -1563,17 +1602,7 @@ function angolaLeagues1C2223() {}
 function angolaLeagues1DOtherSeasons() {}
 
 function angolaLeagues2() {
-button1.innerText = "Segundona League 2 - 2024 / 2025";
-button2.innerText = "Segundona League 2 - 2023 / 2024";
-button3.innerText = "Segundona League 2 - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = angolaLeagues2A2425;
-button2.onclick = angolaLeagues2B2324;
-button3.onclick = angolaLeagues2C2223;
-button4.onclick = angolaLeagues2DOtherSeasons;
-button5.onclick = backToAngola;
-text.innerText = "SELECT AN OPTION";
+update(locations[77]);
 }
 
 function angolaLeagues2A2425() {}
@@ -1585,17 +1614,7 @@ function angolaLeagues2C2223() {}
 function angolaLeagues2DOtherSeasons() {}
 
 function angolaLeagues3() {
-button1.innerText = "Campeonato Provincial League 3 - 2024 / 2025";
-button2.innerText = "Campeonato Provincial League 3 - 2023 / 2024";
-button3.innerText = "Campeonato Provincial League 3 - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = angolaLeagues3A2425;
-button2.onclick = angolaLeagues3B2324;
-button3.onclick = angolaLeagues3C2223;
-button4.onclick = angolaLeagues3DOtherSeasons;
-button5.onclick = backToAngola;
-text.innerText = "SELECT AN OPTION";
+update(locations[78]);
 }
 
 function angolaLeagues3A2425() {}
@@ -1607,17 +1626,7 @@ function angolaLeagues3C2223() {}
 function angolaLeagues3DOtherSeasons() {}
 
 function angolaLeagues4() {
-button1.innerText = "Taça de Angola - 2024 / 2025";
-button2.innerText = "Taça de Angola - 2023 / 2024";
-button3.innerText = "Taça de Angola - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = angolaLeagues4A2425;
-button2.onclick = angolaLeagues4B2324;
-button3.onclick = angolaLeagues4C2223;
-button4.onclick = angolaLeagues4DOtherSeasons;
-button5.onclick = backToAngola;
-text.innerText = "SELECT AN OPTION";
+update(locations[79]);
 }
 
 function angolaLeagues4A2425() {}
@@ -1629,17 +1638,7 @@ function angolaLeagues4C2223() {}
 function angolaLeagues4DOtherSeasons() {}
 
 function southAfricaLeagues1() {
-button1.innerText = "Premiere Soccer League - 2024 / 2025";
-button2.innerText = "Premiere Soccer League - 2023 / 2024";
-button3.innerText = "Premiere Soccer League - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = southAfricaLeagues1A2425;
-button2.onclick = southAfricaLeagues1B2324;
-button3.onclick = southAfricaLeagues1C2223;
-button4.onclick = southAfricaLeagues1DOtherSeasons;
-button5.onclick = backToSouthAfrica;
-text.innerText = "SELECT AN OPTION";
+update(locations[80]);
 }
 
 function backToSouthAfrica() {
@@ -1665,17 +1664,7 @@ function southAfricaLeagues1C2223() {}
 function southAfricaLeagues1DOtherSeasons() {}
 
 function southAfricaLeagues2() {
-button1.innerText = "National First Division - 2024 / 2025";
-button2.innerText = "National First Division - 2023 / 2024";
-button3.innerText = "National First Division - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = southAfricaLeagues2A2425;
-button2.onclick = southAfricaLeagues2B2324;
-button3.onclick = southAfricaLeagues2C2223;
-button4.onclick = southAfricaLeagues2DOtherSeasons;
-button5.onclick = backToSouthAfrica;
-text.innerText = "SELECT AN OPTION";
+update(locations[81]);
 }
 
 function southAfricaLeagues2A2425() {}
@@ -1687,17 +1676,7 @@ function southAfricaLeagues2C2223() {}
 function southAfricaLeagues2DOtherSeasons() {}
 
 function southAfricaLeagues3() {
-button1.innerText = "South Africa Cup - 2024 / 2025";
-button2.innerText = "South Africa Cup - 2023 / 2024";
-button3.innerText = "South Africa Cup - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = southAfricaLeagues3A2425;
-button2.onclick = southAfricaLeagues3B2324;
-button3.onclick = southAfricaLeagues3C2223;
-button4.onclick = southAfricaLeagues3DOtherSeasons;
-button5.onclick = backToSouthAfrica;
-text.innerText = "SELECT AN OPTION";
+update(locations[82]);
 }
 
 function southAfricaLeagues3A2425() {}
@@ -1709,17 +1688,7 @@ function southAfricaLeagues3C2223() {}
 function southAfricaLeagues3DOtherSeasons() {}
 
 function southAfricaLeagues4() {
-button1.innerText = "League Cup - 2024 / 2025";
-button2.innerText = "League Cup - 2023 / 2024";
-button3.innerText = "League Cup - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = southAfricaLeagues4A2425;
-button2.onclick = southAfricaLeagues4B2324;
-button3.onclick = southAfricaLeagues4C2223;
-button4.onclick = southAfricaLeagues4DOtherSeasons;
-button5.onclick = backToSouthAfrica;
-text.innerText = "SELECT AN OPTION";
+update(locations[83]);
 }
 
 function southAfricaLeagues4A2425() {}
