@@ -385,20 +385,44 @@ const locations = [
         "button functions": [chinaLeagues4A25, chinaLeagues4B24, chinaLeagues4C23, chinaLeagues4DOtherSeasons, backToChina],
         text: "SELECT AN OPTION"
     },
+    {
+        name: "United Arab Emirates Leagues 1",//60
+        "button text": ["UAE Pro League - 2024 / 2025", "UAE Pro League - 2023 / 2024", "UAE Pro League - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [unitedArabEmiratesLeagues1A2425, unitedArabEmiratesLeagues1B2324, unitedArabEmiratesLeagues1C2223, unitedArabEmiratesLeagues1DOtherSeasons, backToUnitedArabEmirates],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "United Arab Emirates Leagues 2",//61
+        "button text": ["UAE Division 1 - 2024 / 2025", "UAE Division 1 - 2023 / 2024", "UAE Division 1 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [unitedArabEmiratesLeagues2A2425, unitedArabEmiratesLeagues2B2324, unitedArabEmiratesLeagues2C2223, unitedArabEmiratesLeagues2DOtherSeasons, backToUnitedArabEmirates],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "United Arab Emirates Leagues 3",//62
+        "button text": ["UAE Division 2 - 2024 / 2025", "UAE Division 2 - 2023 / 2024", "UAE Division 2 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [unitedArabEmiratesLeagues3A2425, unitedArabEmiratesLeagues3B2324, unitedArabEmiratesLeagues3C2223, unitedArabEmiratesLeagues3DOtherSeasons, backToUnitedArabEmirates],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "United Arab Emirates Leagues 4",//63
+        "button text": ["League Cup - 2024 / 2025", "League Cup - 2023 / 2024", "League Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [unitedArabEmiratesLeagues4A2425, unitedArabEmiratesLeagues4B2324, unitedArabEmiratesLeagues4C2223, unitedArabEmiratesLeagues4DOtherSeasons, backToUnitedArabEmirates],
+        text: "SELECT AN OPTION"
+    },
 ];
 /*
-function chinaLeagues4() {
-button1.innerText = "China Cup - 2025";
-button2.innerText = "China Cup - 2024";
-button3.innerText = "China Cup - 2023";
+function unitedArabEmiratesLeagues4() {
+button1.innerText = "League Cup - 2024 / 2025";
+button2.innerText = "League Cup - 2023 / 2024";
+button3.innerText = "League Cup - 2022 / 2023";
 button4.innerText = "Other Seasons";//Criar aqui novos botões
 button5.innerText = "BACK";
-button1.onclick = chinaLeagues4A25;
-button2.onclick = chinaLeagues4B24;
-button3.onclick = chinaLeagues4C23;
-button4.onclick = chinaLeagues4DOtherSeasons;
-button5.onclick = backToChina;
-text.innerText = "SELECT AN OPTION"
+button1.onclick = unitedArabEmiratesLeagues4A2425;
+button2.onclick = unitedArabEmiratesLeagues4B2324;
+button3.onclick = unitedArabEmiratesLeagues4C2223;
+button4.onclick = unitedArabEmiratesLeagues4DOtherSeasons;
+button5.onclick = backToUnitedArabEmirates;
+text.innerText = "SELECT AN OPTION";
 }
 */
 
@@ -1183,17 +1207,7 @@ function chinaLeagues4C23() {}
 function chinaLeagues4DOtherSeasons() {}
 
 function unitedArabEmiratesLeagues1() {
-button1.innerText = "UAE Pro League - 2024 / 2025";
-button2.innerText = "UAE Pro League - 2023 / 2024";
-button3.innerText = "UAE Pro League - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = unitedArabEmiratesLeagues1A2425;
-button2.onclick = unitedArabEmiratesLeagues1B2324;
-button3.onclick = unitedArabEmiratesLeagues1C2223;
-button4.onclick = unitedArabEmiratesLeagues1DOtherSeasons;
-button5.onclick = backToUnitedArabEmirates;
-text.innerText = "SELECT AN OPTION";
+update(locations[60]);
 }
 
 function backToUnitedArabEmirates() {
@@ -1219,17 +1233,7 @@ function unitedArabEmiratesLeagues1C2223() {}
 function unitedArabEmiratesLeagues1DOtherSeasons() {}
 
 function unitedArabEmiratesLeagues2() {
-button1.innerText = "UAE Division 1 - 2024 / 2025";
-button2.innerText = "UAE Division 1 - 2023 / 2024";
-button3.innerText = "UAE Division 1 - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = unitedArabEmiratesLeagues2A2425;
-button2.onclick = unitedArabEmiratesLeagues2B2324;
-button3.onclick = unitedArabEmiratesLeagues2C2223;
-button4.onclick = unitedArabEmiratesLeagues2DOtherSeasons;
-button5.onclick = backToUnitedArabEmirates;
-text.innerText = "SELECT AN OPTION";
+update(locations[61]);
 }
 
 function unitedArabEmiratesLeagues2A2425() {}
@@ -1241,17 +1245,7 @@ function unitedArabEmiratesLeagues2C2223() {}
 function unitedArabEmiratesLeagues2DOtherSeasons() {}
 
 function unitedArabEmiratesLeagues3() {
-button1.innerText = "UAE Division 2 - 2024 / 2025";
-button2.innerText = "UAE Division 2 - 2023 / 2024";
-button3.innerText = "UAE Division 2 - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = unitedArabEmiratesLeagues3A2425;
-button2.onclick = unitedArabEmiratesLeagues3B2324;
-button3.onclick = unitedArabEmiratesLeagues3C2223;
-button4.onclick = unitedArabEmiratesLeagues3DOtherSeasons;
-button5.onclick = backToUnitedArabEmirates;
-text.innerText = "SELECT AN OPTION";
+update(locations[62]);
 }
 
 function unitedArabEmiratesLeagues3A2425() {}
@@ -1263,17 +1257,7 @@ function unitedArabEmiratesLeagues3C2223() {}
 function unitedArabEmiratesLeagues3DOtherSeasons() {}
 
 function unitedArabEmiratesLeagues4() {
-button1.innerText = "League Cup - 2024 / 2025";
-button2.innerText = "League Cup - 2023 / 2024";
-button3.innerText = "League Cup - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = unitedArabEmiratesLeagues4A2425;
-button2.onclick = unitedArabEmiratesLeagues4B2324;
-button3.onclick = unitedArabEmiratesLeagues4C2223;
-button4.onclick = unitedArabEmiratesLeagues4DOtherSeasons;
-button5.onclick = backToUnitedArabEmirates;
-text.innerText = "SELECT AN OPTION";
+update(locations[63]);
 }
 
 function unitedArabEmiratesLeagues4A2425() {}
