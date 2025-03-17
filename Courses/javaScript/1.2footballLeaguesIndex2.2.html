@@ -433,19 +433,67 @@ const locations = [
         "button functions": [koreaLeagues4A25, koreaLeagues4B24, koreaLeagues4C23, koreaLeagues4DOtherSeasons, backToKorea],
         text: "SELECT AN OPTION"
     },
+    {
+        name: "Morocco Leagues 1",//68
+        "button text": ["Botola 1 - 2024 / 2025", "Botola 1 - 2023 / 2024", "Botola 1 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [moroccoLeagues1A2425, moroccoLeagues1B2324, moroccoLeagues1C2223, moroccoLeagues1DOtherSeasons, backToMorocco],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Morocco Leagues 2",//69
+        "button text": ["Botola 2 - 2024 / 2025", "Botola 2 - 2023 / 2024", "Botola 2 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [moroccoLeagues2A2425, moroccoLeagues2B2324, moroccoLeagues2C2223, moroccoLeagues2DOtherSeasons, backToMorocco],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Morocco Leagues 3",//70
+        "button text": ["National - 2024 / 2025", "National - 2023 / 2024", "National - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [moroccoLeagues3A2425, moroccoLeagues3B2324, moroccoLeagues3C2223, moroccoLeagues3DOtherSeasons, backToMorocco],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Morocco Leagues 4",//71
+        "button text": ["Moroccan Throne Cup - 2024 / 2025", "Moroccan Throne Cup - 2023 / 2024", "Moroccan Throne Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [moroccoLeagues4A2425, moroccoLeagues4B2324, moroccoLeagues4C2223, moroccoLeagues4DOtherSeasons, backToMorocco],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Egipt Leagues 1",//72
+        "button text": ["Premiere League - 2024 / 2025", "Premiere League - 2023 / 2024", "Premiere League - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [egiptLeagues1A2425, egiptLeagues1B2324, egiptLeagues1C2223, egiptLeagues1DOtherSeasons, backToEgipt],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Egipt Leagues 2",//73
+        "button text": ["Division 2A - 2024 / 2025", "Division 2A - 2023 / 2024", "Division 2A - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [egiptLeagues2A2425, egiptLeagues2B2324, egiptLeagues2C2223, egiptLeagues2DOtherSeasons, backToEgipt],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Egipt Leagues 3",//74
+        "button text": ["Egipt Cup - 2024 / 2025", "Egipt Cup - 2023 / 2024", "Egipt Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [egiptLeagues3A2425, egiptLeagues3B2324, egiptLeagues3C2223, egiptLeagues3DOtherSeasons, backToEgipt],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Egipt Leagues 4",//75
+        "button text": ["League Cup - 2024 / 2025", "League Cup - 2023 / 2024", "League Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [egiptLeagues4A2425, egiptLeagues4B2324, egiptLeagues4C2223, egiptLeagues4DOtherSeasons, backToEgipt],
+        text: "SELECT AN OPTION"
+    },
 ];
 /*
-function koreaLeagues4() {
-button1.innerText = "League Cup - 2025";
-button2.innerText = "League Cup - 2024";
-button3.innerText = "League Cup - 2023";
+function egiptLeagues4() {
+button1.innerText = "League Cup - 2024 / 2025";
+button2.innerText = "League Cup - 2023 / 2024";
+button3.innerText = "League Cup - 2022 / 2023";
 button4.innerText = "Other Seasons";//Criar aqui novos botões
 button5.innerText = "BACK";
-button1.onclick = koreaLeagues4A25;
-button2.onclick = koreaLeagues4B24;
-button3.onclick = koreaLeagues4C23;
-button4.onclick = koreaLeagues4DOtherSeasons;
-button5.onclick = backToKorea;
+button1.onclick = egiptLeagues4A2425;
+button2.onclick = egiptLeagues4B2324;
+button3.onclick = egiptLeagues4C2223;
+button4.onclick = egiptLeagues4DOtherSeasons;
+button5.onclick = backToEgipt;
 text.innerText = "SELECT AN OPTION";
 }
 */
@@ -1354,19 +1402,8 @@ function koreaLeagues4C23() {}
 
 function koreaLeagues4DOtherSeasons() {}
 
-//CONTINUAR A TRABLHAR DAQUI LOCATIONS 68
 function moroccoLeagues1() {
-button1.innerText = "Botola 1 - 2024 / 2025";
-button2.innerText = "Botola 1 - 2023 / 2024";
-button3.innerText = "Botola 1 - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = moroccoLeagues1A2425;
-button2.onclick = moroccoLeagues1B2324;
-button3.onclick = moroccoLeagues1C2223;
-button4.onclick = moroccoLeagues1DOtherSeasons;
-button5.onclick = backToMorocco;
-text.innerText = "SELECT AN OPTION";
+update(locations[68]);
 }
 
 function backToMorocco() {
@@ -1392,17 +1429,7 @@ function moroccoLeagues1C2223() {}
 function moroccoLeagues1DOtherSeasons() {}
 
 function moroccoLeagues2() {
-button1.innerText = "Botola 2 - 2024 / 2025";
-button2.innerText = "Botola 2 - 2023 / 2024";
-button3.innerText = "Botola 2 - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = moroccoLeagues2A2425;
-button2.onclick = moroccoLeagues2B2324;
-button3.onclick = moroccoLeagues2C2223;
-button4.onclick = moroccoLeagues2DOtherSeasons;
-button5.onclick = backToMorocco;
-text.innerText = "SELECT AN OPTION";
+update(locations[69]);
 }
 
 function moroccoLeagues2A2425() {}
@@ -1414,17 +1441,7 @@ function moroccoLeagues2C2223() {}
 function moroccoLeagues2DOtherSeasons() {}
 
 function moroccoLeagues3() {
-button1.innerText = "National - 2024 / 2025";
-button2.innerText = "National - 2023 / 2024";
-button3.innerText = "National - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = moroccoLeagues3A2425;
-button2.onclick = moroccoLeagues3B2324;
-button3.onclick = moroccoLeagues3C2223;
-button4.onclick = moroccoLeagues3DOtherSeasons;
-button5.onclick = backToMorocco;
-text.innerText = "SELECT AN OPTION";
+update(locations[70]);
 }
 
 function moroccoLeagues3A2425() {}
@@ -1436,17 +1453,7 @@ function moroccoLeagues3C2223() {}
 function moroccoLeagues3DOtherSeasons() {}
 
 function moroccoLeagues4() {
-button1.innerText = "Moroccan Throne Cup - 2024 / 2025";
-button2.innerText = "Moroccan Throne Cup - 2023 / 2024";
-button3.innerText = "Moroccan Throne Cup - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = moroccoLeagues4A2425;
-button2.onclick = moroccoLeagues4B2324;
-button3.onclick = moroccoLeagues4C2223;
-button4.onclick = moroccoLeagues4DOtherSeasons;
-button5.onclick = backToMorocco;
-text.innerText = "SELECT AN OPTION";
+update(locations[71]);
 }
 
 function moroccoLeagues4A2425() {}
@@ -1458,17 +1465,7 @@ function moroccoLeagues4C2223() {}
 function moroccoLeagues4DOtherSeasons() {}
 
 function egiptLeagues1() {
-button1.innerText = "Premiere League - 2024 / 2025";
-button2.innerText = "Premiere League - 2023 / 2024";
-button3.innerText = "Premiere League - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = egiptLeagues1A2425;
-button2.onclick = egiptLeagues1B2324;
-button3.onclick = egiptLeagues1C2223;
-button4.onclick = egiptLeagues1DOtherSeasons;
-button5.onclick = backToEgipt;
-text.innerText = "SELECT AN OPTION";
+update(locations[72]);
 }
 
 function backToEgipt() {
@@ -1494,17 +1491,7 @@ function egiptLeagues1C2223() {}
 function egiptLeagues1DOtherSeasons() {}
 
 function egiptLeagues2() {
-button1.innerText = "Division 2A - 2024 / 2025";
-button2.innerText = "Division 2A - 2023 / 2024";
-button3.innerText = "Division 2A - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = egiptLeagues2A2425;
-button2.onclick = egiptLeagues2B2324;
-button3.onclick = egiptLeagues2C2223;
-button4.onclick = egiptLeagues2DOtherSeasons;
-button5.onclick = backToEgipt;
-text.innerText = "SELECT AN OPTION";
+update(locations[73]);
 }
 
 function egiptLeagues2A2425() {}
@@ -1516,17 +1503,7 @@ function egiptLeagues2C2223() {}
 function egiptLeagues2DOtherSeasons() {}
 
 function egiptLeagues3() {
-button1.innerText = "Egipt Cup - 2024 / 2025";
-button2.innerText = "Egipt Cup - 2023 / 2024";
-button3.innerText = "Egipt Cup - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = egiptLeagues3A2425;
-button2.onclick = egiptLeagues3B2324;
-button3.onclick = egiptLeagues3C2223;
-button4.onclick = egiptLeagues3DOtherSeasons;
-button5.onclick = backToEgipt;
-text.innerText = "SELECT AN OPTION";
+update(locations[74]);
 }
 
 function egiptLeagues3A2425() {}
@@ -1538,17 +1515,7 @@ function egiptLeagues3C2223() {}
 function egiptLeagues3DOtherSeasons() {}
 
 function egiptLeagues4() {
-button1.innerText = "League Cup - 2024 / 2025";
-button2.innerText = "League Cup - 2023 / 2024";
-button3.innerText = "League Cup - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = egiptLeagues4A2425;
-button2.onclick = egiptLeagues4B2324;
-button3.onclick = egiptLeagues4C2223;
-button4.onclick = egiptLeagues4DOtherSeasons;
-button5.onclick = backToEgipt;
-text.innerText = "SELECT AN OPTION";
+update(locations[75]);
 }
 
 function egiptLeagues4A2425() {}
