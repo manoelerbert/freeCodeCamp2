@@ -289,19 +289,43 @@ const locations = [
         "button functions": [brazilLeagues4A25, brazilLeagues4B24, brazilLeagues4C23, brazilLeagues4DOtherSeasons, backToBrazil],
         text: "SELECT AN OPTION"
     },
+    {
+        name: "Mexico Leagues 1",//44
+        "button text": ["Liga MX - 2024 / 2025", "Liga MX - 2023 / 2024", "Liga MX - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [mexicoLeagues1A2425, mexicoLeagues1B2324, mexicoLeagues1C2223, mexicoLeagues1DOtherSeasons, backToMexico],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Mexico Leagues 2",//45
+        "button text": ["Liga de Expansion MX - 2024 / 2025", "Liga de Expansion MX - 2023 / 2024", "Liga de Expansion MX - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [mexicoLeagues2A2425, mexicoLeagues2B2324, mexicoLeagues2C2223, mexicoLeagues2DOtherSeasons, backToMexico],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Mexico Leagues 3",//46
+        "button text": ["Liga Premier Serie A - 2024 / 2025", "Liga Premier Serie A - 2023 / 2024", "Liga Premier Serie A - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [mexicoLeagues3A2425, mexicoLeagues3B2324, mexicoLeagues3C2223, mexicoLeagues3DOtherSeasons, backToMexico],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Mexico Leagues 4",//47
+        "button text": ["Copa MX - 2024 / 2025", "Copa MX - 2023 / 2024", "Copa MX - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [mexicoLeagues4A2425, mexicoLeagues4B2324, mexicoLeagues4C2223, mexicoLeagues4DOtherSeasons, backToMexico],
+        text: "SELECT AN OPTION"
+    },
 ];
 /*
-function brazilLeagues4() {
-button1.innerText = "Copa do Brasil - 2025";
-button2.innerText = "Copa do Brasil - 2024";
-button3.innerText = "Copa do Brasil - 2023";
+function mexicoLeagues4() {
+button1.innerText = "Copa MX - 2024 / 2025";
+button2.innerText = "Copa MX - 2023 / 2024";
+button3.innerText = "Copa MX - 2022 / 2023";
 button4.innerText = "Other Seasons";//Criar aqui novos botões
 button5.innerText = "BACK";
-button1.onclick = brazilLeagues4A25;
-button2.onclick = brazilLeagues4B24;
-button3.onclick = brazilLeagues4C23;
-button4.onclick = brazilLeagues4DOtherSeasons;
-button5.onclick = backToBrazil;
+button1.onclick = mexicoLeagues4A2425;
+button2.onclick = mexicoLeagues4B2324;
+button3.onclick = mexicoLeagues4C2223;
+button4.onclick = mexicoLeagues4DOtherSeasons;
+button5.onclick = backToMexico;
 text.innerText = "SELECT AN OPTION";
 }
 */
@@ -837,19 +861,9 @@ function brazilLeagues4B24() {}
 function brazilLeagues4C23() {}
 
 function brazilLeagues4DOtherSeasons() {}
-// CONTINUAR TRABALHO DAQUI PARA LOCATIONS 44
+
 function mexicoLeagues1() {
-button1.innerText = "Liga MX - 2024 / 2025";
-button2.innerText = "Liga MX - 2023 / 2024";
-button3.innerText = "Liga MX - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = mexicoLeagues1A2425;
-button2.onclick = mexicoLeagues1B2324;
-button3.onclick = mexicoLeagues1C2223;
-button4.onclick = mexicoLeagues1DOtherSeasons;
-button5.onclick = backToMexico;
-text.innerText = "SELECT AN OPTION";
+update(locations[44]);
 }
 
 function backToMexico() {
@@ -875,17 +889,7 @@ function mexicoLeagues1C2223() {}
 function mexicoLeagues1DOtherSeasons() {}
 
 function mexicoLeagues2() {
-button1.innerText = "Liga de Expansion MX - 2024 / 2025";
-button2.innerText = "Liga de Expansion MX - 2023 / 2024";
-button3.innerText = "Liga de Expansion MX - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = mexicoLeagues2A2425;
-button2.onclick = mexicoLeagues2B2324;
-button3.onclick = mexicoLeagues2C2223;
-button4.onclick = mexicoLeagues2DOtherSeasons;
-button5.onclick = backToMexico;
-text.innerText = "SELECT AN OPTION";
+update(locations[45]);
 }
 
 function mexicoLeagues2A2425() {}
@@ -897,17 +901,7 @@ function mexicoLeagues2C2223() {}
 function mexicoLeagues2DOtherSeasons() {}
 
 function mexicoLeagues3() {
-button1.innerText = "Liga Premier Serie A - 2024 / 2025";
-button2.innerText = "Liga Premier Serie A - 2023 / 2024";
-button3.innerText = "Liga Premier Serie A - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = mexicoLeagues3A2425;
-button2.onclick = mexicoLeagues3B2324;
-button3.onclick = mexicoLeagues3C2223;
-button4.onclick = mexicoLeagues3DOtherSeasons;
-button5.onclick = backToMexico;
-text.innerText = "SELECT AN OPTION";
+update(locations[46]);
 }
 
 function mexicoLeagues3A2425() {}
@@ -919,17 +913,7 @@ function mexicoLeagues3C2223() {}
 function mexicoLeagues3DOtherSeasons() {}
 
 function mexicoLeagues4() {
-button1.innerText = "Copa MX - 2024 / 2025";
-button2.innerText = "Copa MX - 2023 / 2024";
-button3.innerText = "Copa MX - 2022 / 2023";
-button4.innerText = "Other Seasons";/*Criar aqui novos botões*/
-button5.innerText = "BACK";
-button1.onclick = mexicoLeagues4A2425;
-button2.onclick = mexicoLeagues4B2324;
-button3.onclick = mexicoLeagues4C2223;
-button4.onclick = mexicoLeagues4DOtherSeasons;
-button5.onclick = backToMexico;
-text.innerText = "SELECT AN OPTION";
+update(locations[47]);
 }
 
 function mexicoLeagues4A2425() {}
