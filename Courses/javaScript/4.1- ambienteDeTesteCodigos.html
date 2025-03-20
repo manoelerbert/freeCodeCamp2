@@ -1,17 +1,2003 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Football Leagues Index</title>
 </head>
 <body>
-  <p>
-    <s>Tomorrow's hike will be meeting at noon.</s>
-  </p>
-  <p>
-    Due to unforeseen weather conditions, the hike has been cancelled.
-  </p>
+<div id="game">
+<div id="controls">
+<button id="button1">Leagues from Europe</button>
+<button id="button2">Leagues from Americas</button>
+<button id="button3">Leagues from Asia</button>
+<button id="button4">Leagues from Africa</button>
+<button id="button5">Other Leagues - Coming soon !!!</button>
+</div>
+<div id="text">
+SELECT AN OPTION - From above
+</div>
+</div>
+
+<script>
+const button1 = document.querySelector("#button1");
+const button2 = document.querySelector("#button2");
+const button3 = document.querySelector("#button3");
+const button4 = document.querySelector("#button4");
+const button5 = document.querySelector("#button5");
+const text = document.querySelector("#text");
+const locations = [
+    {
+        name: "Leagues from Europe",// 0
+        "button text": ["England", "Portugal", "Spain", "France", "BACK"],
+        "button functions": [leaguesFromEngland, leaguesFromPortugal, leaguesFromSpain, leaguesFromFrance, backToMain],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from America",//1
+        "button text": ["Argentina", "Brazil", "Mexico", "USA", "BACK"],
+        "button functions": [leaguesFromArgentina, leaguesFromBrazil, leaguesFromMexico, leaguesFromUsa, backToMain],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from Asia",//2
+        "button text": ["Japan", "China", "United Arab Emirates", "South Korea", "BACK"],
+        "button functions": [leaguesFromJapan, leaguesFromChina, leaguesFromUnitedArabEmirates, leaguesFromSouthKorea, backToMain],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from Africa",//3
+        "button text": ["Morocco", "Egipt", "Angola", "South Africa", "BACK"],
+        "button functions": [leaguesFromMorocco, leaguesFromEgipt, leaguesFromAngola, leaguesFromSouthAfrica, backToMain],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from England",//4
+        "button text": ["Premiere League", "Championship", "English Cup", "English League Cup", "BACK"],
+        "button functions": [englandLeagues1, englandLeagues2, englandLeagues3, englandLeagues4, backToEurope],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from Portugal",//5
+        "button text": ["Liga Portugal", "Liga Portugal 2", "Taça de Portugal", "Taça da Liga de Portugal", "BACK"],
+        "button functions": [portugalLeagues1, portugalLeagues2, portugalLeagues3, portugalLeagues4, backToEurope],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from Spain",//6
+        "button text": ["La Liga", "La Liga 2", "Copa del Rey", "Copa de La Liga", "BACK"],
+        "button functions": [spainLeagues1, spainLeagues2, spainLeagues3, spainLeagues4, backToEurope],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from France",//7
+        "button text": ["Ligue 1", "Ligue 2", "Coupe de France", "Coupe de la Ligue", "BACK"],
+        "button functions": [franceLeagues1, franceLeagues2, franceLeagues3, franceLeagues4, backToEurope],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from Argentina",//8
+        "button text": ["Primera Division", "Primera Nacional", "Primera B", "Copa de Argentina", "BACK"],
+        "button functions": [argentinaLeagues1, argentinaLeagues2, argentinaLeagues3, argentinaLeagues4, backToAmericas],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from Brazil",//9
+        "button text": ["Brasileirão Serie A", "Brasileirão Serie B", "Brasileirão Serie C", "Copa do Brasil", "BACK"],
+        "button functions": [brazilLeagues1, brazilLeagues2, brazilLeagues3, brazilLeagues4, backToAmericas],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from Mexico",//10
+        "button text": ["Liga MX", "Liga de Expansion MX", "Liga Premier Serie A", "Copa MX", "BACK"],
+        "button functions": [mexicoLeagues1, mexicoLeagues2, mexicoLeagues3, mexicoLeagues4, backToAmericas],
+        "text": "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from USA",//11
+        "button text": ["MLS - Major League Soccer", "USL Championship", "MLS Next Pro", "USL League One", "BACK"],
+        "button functions": [usaLeagues1, usaLeagues2, usaLeagues3, usaLeagues4, backToAmericas],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from Japan",//12
+        "button text": ["J1 League", "J2 League", "J3 League", "Emperor´s Cup", "BACK"],
+        "button functions": [japanLeagues1, japanLeagues2, japanLeagues3, japanLeagues4, backToAsia],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from China",//13
+        "button text": ["CFA Super League", "CFA China League", "CFA China League 2", "China Cup", "BACK"],
+        "button functions": [chinaLeagues1, chinaLeagues2, chinaLeagues3, chinaLeagues4, backToAsia],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from United Arab Emirates",//14
+        "button text": ["UAE Pro League", "UAE Division 1", "UAE Division 2", "League Cup", "BACK"],
+        "button functions": [unitedArabEmiratesLeagues1, unitedArabEmiratesLeagues2, unitedArabEmiratesLeagues3, unitedArabEmiratesLeagues4, backToAsia],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from South Korea",//15
+        "button text": ["K League 1", "K League 2", "Korean Cup", "League Cup", "BACK"],
+        "button functions": [koreaLeagues1, koreaLeagues2, koreaLeagues3, koreaLeagues4, backToAsia],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from Morocco",//16
+        "button text": ["Botola 1", "Botola 2", "National", "Moroccan Throne Cup", "BACK"],
+        "button functions": [moroccoLeagues1, moroccoLeagues2, moroccoLeagues3, moroccoLeagues4, backToAfrica],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from Egipt",//17
+        "button text": ["Premiere League", "Division 2A", "Egipt Cup", "League Cup", "BACK"],
+        "button functions": [egiptLeagues1, egiptLeagues2, egiptLeagues3, egiptLeagues4, backToAfrica],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from Angola",//18
+        "button text": ["Girabola - League 1", "Segundona - League 2", "Campeonato Provincial - League 3", "Taça de Angola", "BACK"],
+        "button functions": [angolaLeagues1, angolaLeagues2, angolaLeagues3, angolaLeagues4, backToAfrica],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Leagues from South Africa",//19
+        "button text": ["Premiere Soccer League", "National First Division", "South Africa Cup", "League Cup", "BACK"],
+        "button functions": [southAfricaLeagues1, southAfricaLeagues2, southAfricaLeagues3, southAfricaLeagues4, backToAfrica],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "England Leagues 1",//20
+        "button text": ["Premiere League - 2024 / 2025", "Premiere League - 2023 / 2024", "Premiere League - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [englandLeagues1A2425, englandLeagues1B2324, englandLeagues1C2223, englandLeagues1DOtherSeasons, backToEngland],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "England Leagues 2",//21
+        "button text": ["Championship - 2024 / 2025", "Championship - 2023 / 2024", "Championship - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [englandLeagues2A2425, englandLeagues2B2324, englandLeagues2C2223, englandLeagues2DOtherSeasons, backToEngland],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "England Leagues 3",//22
+        "button text": ["English Cup - 2024 / 2025", "English Cup - 2023 / 2024", "English Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [englandLeagues3A2425, englandLeagues3B2324, englandLeagues3C2223, englandLeagues3DOtherSeasons, backToEngland],
+        "text": "SELECT AN OPTION"
+    },
+    {
+        name: "England Leagues 4",//23
+        "button text": ["English League Cup - 2024 / 2025", "English League Cup - 2023 / 2024", "English League Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [englandLeagues3A2425, englandLeagues3B2324, englandLeagues3C2223, englandLeagues3DOtherSeasons, backToEngland],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Portugal Leagues 1",//24
+        "button text": ["Liga Portugal - 2024 / 2025", "Liga Portugal - 2023 / 2024", "Liga Portugal - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [portugalLeagues1A2425, portugalLeagues1B2324, portugalLeagues1C2223, portugalLeagues1DOtherSeasons, backToPortugal],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Portugal Leagues 2",//25
+        "button text": ["Liga Portugal 2 - 2024 / 2025", "Liga Portugal 2 - 2023 / 2024", "Liga Portugal 2 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [portugalLeagues2A2425, portugalLeagues2B2324, portugalLeagues2C2223, portugalLeagues2DOtherSeasons, backToPortugal],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Portugal Leagues 3",//26
+        "button text": ["Taça de Portugal - 2024 / 2025", "Taça de Portugal - 2023 / 2024", "Taça de Portugal - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [portugalLeagues3A2425, portugalLeagues3B2324, portugalLeagues3C2223, portugalLeagues3DOtherSeasons, backToPortugal],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Portugal Leagues 4",//27
+        "button text": ["Taça da Liga de Portugal - 2024 / 2025", "Taça da Liga de Portugal - 2023 / 2024", "Taça da Liga de Portugal - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [portugalLeagues4A2425, portugalLeagues4B2324, portugalLeagues4C2223, portugalLeagues4DOtherSeasons, backToPortugal],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Spain Leagues 1",//28
+        "button text": ["La Liga - 2024 / 2025", "La Liga - 2023 / 2024", "La Liga - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [spainLeagues1A2425, spainLeagues1B2324, spainLeagues1C2223, spainLeagues1DOtherSeasons, backToSpain],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Spain Leagues 2",//29
+        "button text": ["La Liga 2 - 2024 / 2025", "La Liga 2 - 2023 / 2024", "La Liga 2 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [spainLeagues2A2425, spainLeagues2B2324, spainLeagues2C2223, spainLeagues2DOtherSeasons, backToSpain],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Spain Leagues 3",//30
+        "button text": ["Copa del Rey - 2024 / 2025", "Copa del Rey - 2023 / 2024", "Copa del Rey - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [spainLeagues3A2425, spainLeagues3B2324, spainLeagues3C2223, spainLeagues3DOtherSeasons, backToSpain],
+    },
+    {
+        name: "Spain Leagues 4",//31
+        "button text": ["Copa de La Liga - 2024 / 2025", "Copa de La Liga - 2023 / 2024", "Copa de La Liga - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [spainLeagues4A2425, spainLeagues4B2324, spainLeagues4C2223, spainLeagues4DOtherSeasons, backToSpain],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "France Leagues 1",//32
+        "button text": ["Ligue 1 - 2024 / 2025", "Ligue 1 - 2023 / 2024", "Ligue 1 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [franceLeagues1A2425, franceLeagues1B2324, franceLeagues1C2223, franceLeagues1DOtherSeasons, backToFrance],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "France Leagues 2",//33
+        "button text": ["Ligue 2 - 2024 / 2025", "Ligue 2 - 2023 / 2024", "Ligue 2 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [franceLeagues2A2425, franceLeagues2B2324, franceLeagues2C2223, franceLeagues2DOtherSeasons, backToFrance],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "France Leagues 3",//34
+        "button text": ["Coupe de France - 2024 / 2025", "Coupe de France - 2023 / 2024", "Coupe de France - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [franceLeagues3A2425, franceLeagues3B2324, franceLeagues3C2223, franceLeagues3DOtherSeasons, backToFrance],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "France Leagues 4",//35
+        "button text": ["Coupe de La Ligue - 2024 / 2025", "Coupe de La Ligue - 2023 / 2024", "Coupe de La Ligue - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [franceLeagues4A2425, franceLeagues4B2324, franceLeagues4C2223, franceLeagues4DOtherSeasons, backToFrance],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Argentina Leagues 1",//36
+        "button text": ["Primera Division - 2025", "Primera Division - 2024", "Primera Division - 2023", "Other Seasons", "BACK"],
+        "button functions": [argentinaLeagues1A25, argentinaLeagues1B24, argentinaLeagues1C23, argentinaLeagues1DOtherSeasons, backToArgentina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Argentina Leagues 2",//37
+        "button text": ["Primera Nacional - 2025", "Primera Nacional - 2024", "Primera Nacional - 2023", "Other Seasons", "BACK"],
+        "button functions": [argentinaLeagues2A25, argentinaLeagues2B24, argentinaLeagues2C23, argentinaLeagues2DOtherSeasons, backToArgentina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Argentina Leagues 3",//38
+        "button text": ["Primera B - 2025", "Primera B - 2024", "Primera B - 2023", "Other Seasons", "BACK"],
+        "button functions": [argentinaLeagues3A25, argentinaLeagues3B24, argentinaLeagues3C23, argentinaLeagues3DOtherSeasons, backToArgentina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Argentina Leagues 4",//39
+        "button text": ["Copa de Argentina - 2025", "Copa de Argentina - 2024", "Copa de Argentina - 2023", "Other Seasons", "BACK"],
+        "button functions": [argentinaLeagues4A25, argentinaLeagues4B24, argentinaLeagues4C23, argentinaLeagues4DOtherSeasons, backToArgentina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Brazil Leagues 1",//40
+        "button text": ["Brasileirão Serie A - 2025", "Brasileirão Serie A - 2024", "Brasileirão Serie A - 2023", "Other Seasons", "BACK"],
+        "button functions": [brazilLeagues1A25, brazilLeagues1B24, brazilLeagues1C23, brazilLeagues1DOtherSeasons, backToBrazil],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Brazil Leagues 2",//41
+        "button text": ["Brasileirão Serie B - 2025", "Brasileirão Serie B - 2024", "Brasileirão Serie B - 2023", "Other Seasons", "BACK"],
+        "button functions": [brazilLeagues2A25, brazilLeagues2B24, brazilLeagues2C23, brazilLeagues2DOtherSeasons, backToBrazil],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Brazil Leagues 3",//42
+        "button text": ["Brasileirão Serie C - 2025", "Brasileirão Serie C - 2024", "Brasileirão Serie C - 2023", "Other Seasons", "BACK"],
+        "button functions": [brazilLeagues3A25, brazilLeagues3B24, brazilLeagues3C23, brazilLeagues3DOtherSeasons, backToBrazil],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Brazil Leagues 4",//43
+        "button text": ["Copa do Brasil - 2025", "Copa do Brasil - 2024", "Copa do Brasil - 2023", "Other Seasons", "BACK"],
+        "button functions": [brazilLeagues4A25, brazilLeagues4B24, brazilLeagues4C23, brazilLeagues4DOtherSeasons, backToBrazil],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Mexico Leagues 1",//44
+        "button text": ["Liga MX - 2024 / 2025", "Liga MX - 2023 / 2024", "Liga MX - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [mexicoLeagues1A2425, mexicoLeagues1B2324, mexicoLeagues1C2223, mexicoLeagues1DOtherSeasons, backToMexico],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Mexico Leagues 2",//45
+        "button text": ["Liga de Expansion MX - 2024 / 2025", "Liga de Expansion MX - 2023 / 2024", "Liga de Expansion MX - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [mexicoLeagues2A2425, mexicoLeagues2B2324, mexicoLeagues2C2223, mexicoLeagues2DOtherSeasons, backToMexico],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Mexico Leagues 3",//46
+        "button text": ["Liga Premier Serie A - 2024 / 2025", "Liga Premier Serie A - 2023 / 2024", "Liga Premier Serie A - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [mexicoLeagues3A2425, mexicoLeagues3B2324, mexicoLeagues3C2223, mexicoLeagues3DOtherSeasons, backToMexico],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Mexico Leagues 4",//47
+        "button text": ["Copa MX - 2024 / 2025", "Copa MX - 2023 / 2024", "Copa MX - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [mexicoLeagues4A2425, mexicoLeagues4B2324, mexicoLeagues4C2223, mexicoLeagues4DOtherSeasons, backToMexico],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "USA Leagues 1",//48
+        "button text": ["MLS - Major League Soccer - 2025", "MLS - Major League Soccer - 2024", "MLS - Major League Soccer - 2023", "Other Seasons", "BACK"],
+        "button functions": [usaLeagues1A25, usaLeagues1B24, usaLeagues1C23, usaLeagues1DOtherSeasons, backToUsa],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "USA Leagues 2",//49
+        "button text": ["USL Championship - 2025", "USL Championship - 2024", "USL Championship - 2023", "Other Seasons", "BACK"],
+        "button functions": [usaLeagues2A25, usaLeagues2B24, usaLeagues2C23, usaLeagues2DOtherSeasons, backToUsa],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "USA Leagues 3",//50
+        "button text": ["MLS Next Pro - 2025", "MLS Next Pro - 2024", "MLS Next Pro - 2023", "Other Seasons", "BACK"],
+        "button functions": [usaLeagues3A25, usaLeagues3B24, usaLeagues3C23, usaLeagues3DOtherSeasons, backToUsa],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "USA Leagues 4",//51
+        "button text": ["USL League One - 2025", "USL League One - 2024", "USL League One - 2023", "Other Seasons", "BACK"],
+        "button functions": [usaLeagues4A25, usaLeagues4B24, usaLeagues4C23, usaLeagues4DOtherSeasons, backToUsa],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Japan Leagues 1",//52
+        "button text": ["J1 League - 2025", "J1 League - 2024", "J1 League - 2023", "Other Seasons", "BACK"],
+        "button functions": [japanLeagues1A25, japanLeagues1B24, japanLeagues1C23, japanLeagues1DOtherSeasons, backToJapan],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Japan Leagues 2",//53
+        "button text": ["J2 League - 2025", "J2 League - 2024", "J2 League - 2023", "Other Seasons", "BACK"],
+        "button functions": [japanLeagues2A25, japanLeagues2B24, japanLeagues2C23, japanLeagues2DOtherSeasons, backToJapan],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Japan Leagues 3",//54
+        "button text": ["J3 League - 2025", "J3 League - 2024", "J3 League - 2023", "Other Seasons", "BACK"],
+        "button functions": [japanLeagues3A25, japanLeagues3B24, japanLeagues3C23, japanLeagues3DOtherSeasons, backToJapan],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Japan Leagues 4",//55
+        "button text": ["Emperor´s Cup - 2025", "Emperor´s Cup - 2024", "Emperor´s Cup - 2023", "Other Seasons", "BACK"],
+        "button functions": [japanLeagues4A25, japanLeagues4B24, japanLeagues4C23, japanLeagues4DOtherSeasons, backToJapan],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "China Leagues 1",//56
+        "button text": ["CFA Super League - 2025", "CFA Super League - 2024", "CFA Super League - 2023", "Other Seasons", "BACK"],
+        "button functions": [chinaLeagues1A25, chinaLeagues1B24, chinaLeagues1C23, chinaLeagues1DOtherSeasons, backToChina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "China Leagues 2",//57
+        "button text": ["CFA China League - 2025", "CFA China League - 2024", "CFA China League - 2023", "Other Seasons", "BACK"],
+        "button functions": [chinaLeagues2A25, chinaLeagues2B24, chinaLeagues2C23, chinaLeagues2DOtherSeasons, backToChina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "China Leagues 3",//58
+        "button text": ["CFA China League 2 - 2025", "CFA China League 2 - 2024", "CFA China League 2 - 2023", "Other Seasons", "BACK"],
+        "button functions": [chinaLeagues3A25, chinaLeagues3B24, chinaLeagues3C23, chinaLeagues3DOtherSeasons, backToChina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "China Leagues 4",//59
+        "button text": ["China Cup - 2025", "China Cup - 2024", "China Cup - 2023", "Other Seasons", "BACK"],
+        "button functions": [chinaLeagues4A25, chinaLeagues4B24, chinaLeagues4C23, chinaLeagues4DOtherSeasons, backToChina],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "United Arab Emirates Leagues 1",//60
+        "button text": ["UAE Pro League - 2024 / 2025", "UAE Pro League - 2023 / 2024", "UAE Pro League - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [unitedArabEmiratesLeagues1A2425, unitedArabEmiratesLeagues1B2324, unitedArabEmiratesLeagues1C2223, unitedArabEmiratesLeagues1DOtherSeasons, backToUnitedArabEmirates],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "United Arab Emirates Leagues 2",//61
+        "button text": ["UAE Division 1 - 2024 / 2025", "UAE Division 1 - 2023 / 2024", "UAE Division 1 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [unitedArabEmiratesLeagues2A2425, unitedArabEmiratesLeagues2B2324, unitedArabEmiratesLeagues2C2223, unitedArabEmiratesLeagues2DOtherSeasons, backToUnitedArabEmirates],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "United Arab Emirates Leagues 3",//62
+        "button text": ["UAE Division 2 - 2024 / 2025", "UAE Division 2 - 2023 / 2024", "UAE Division 2 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [unitedArabEmiratesLeagues3A2425, unitedArabEmiratesLeagues3B2324, unitedArabEmiratesLeagues3C2223, unitedArabEmiratesLeagues3DOtherSeasons, backToUnitedArabEmirates],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "United Arab Emirates Leagues 4",//63
+        "button text": ["League Cup - 2024 / 2025", "League Cup - 2023 / 2024", "League Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [unitedArabEmiratesLeagues4A2425, unitedArabEmiratesLeagues4B2324, unitedArabEmiratesLeagues4C2223, unitedArabEmiratesLeagues4DOtherSeasons, backToUnitedArabEmirates],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Korea Leagues 1",//64
+        "button text": ["K League 1 - 2025", "K League 1 - 2024", "K League 1 - 2023", "Other Seasons", "BACK"],
+        "button functions": [koreaLeagues1A25, koreaLeagues1B24, koreaLeagues1C23, koreaLeagues1DOtherSeasons, backToKorea],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Korea Leagues 2",//65
+        "button text": ["K League 2 - 2025", "K League 2 - 2024", "K League 2 - 2023", "Other Seasons", "BACK"],
+        "button functions": [koreaLeagues2A25, koreaLeagues2B24, koreaLeagues2C23, koreaLeagues2DOtherSeasons, backToKorea],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Korea Leagues 3",//66
+        "button text": ["Korean Cup - 2025", "Korean Cup - 2024", "Korean Cup - 2023", "Other Seasons", "BACK"],
+        "button functions": [koreaLeagues3A25, koreaLeagues3B24, koreaLeagues3C23, koreaLeagues3DOtherSeasons, backToKorea],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Korea Leagues 4",//67
+        "button text": ["League Cup - 2025", "League Cup - 2024", "League Cup - 2023", "Other Seasons", "BACK"],
+        "button functions": [koreaLeagues4A25, koreaLeagues4B24, koreaLeagues4C23, koreaLeagues4DOtherSeasons, backToKorea],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Morocco Leagues 1",//68
+        "button text": ["Botola 1 - 2024 / 2025", "Botola 1 - 2023 / 2024", "Botola 1 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [moroccoLeagues1A2425, moroccoLeagues1B2324, moroccoLeagues1C2223, moroccoLeagues1DOtherSeasons, backToMorocco],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Morocco Leagues 2",//69
+        "button text": ["Botola 2 - 2024 / 2025", "Botola 2 - 2023 / 2024", "Botola 2 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [moroccoLeagues2A2425, moroccoLeagues2B2324, moroccoLeagues2C2223, moroccoLeagues2DOtherSeasons, backToMorocco],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Morocco Leagues 3",//70
+        "button text": ["National - 2024 / 2025", "National - 2023 / 2024", "National - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [moroccoLeagues3A2425, moroccoLeagues3B2324, moroccoLeagues3C2223, moroccoLeagues3DOtherSeasons, backToMorocco],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Morocco Leagues 4",//71
+        "button text": ["Moroccan Throne Cup - 2024 / 2025", "Moroccan Throne Cup - 2023 / 2024", "Moroccan Throne Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [moroccoLeagues4A2425, moroccoLeagues4B2324, moroccoLeagues4C2223, moroccoLeagues4DOtherSeasons, backToMorocco],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Egipt Leagues 1",//72
+        "button text": ["Premiere League - 2024 / 2025", "Premiere League - 2023 / 2024", "Premiere League - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [egiptLeagues1A2425, egiptLeagues1B2324, egiptLeagues1C2223, egiptLeagues1DOtherSeasons, backToEgipt],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Egipt Leagues 2",//73
+        "button text": ["Division 2A - 2024 / 2025", "Division 2A - 2023 / 2024", "Division 2A - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [egiptLeagues2A2425, egiptLeagues2B2324, egiptLeagues2C2223, egiptLeagues2DOtherSeasons, backToEgipt],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Egipt Leagues 3",//74
+        "button text": ["Egipt Cup - 2024 / 2025", "Egipt Cup - 2023 / 2024", "Egipt Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [egiptLeagues3A2425, egiptLeagues3B2324, egiptLeagues3C2223, egiptLeagues3DOtherSeasons, backToEgipt],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Egipt Leagues 4",//75
+        "button text": ["League Cup - 2024 / 2025", "League Cup - 2023 / 2024", "League Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [egiptLeagues4A2425, egiptLeagues4B2324, egiptLeagues4C2223, egiptLeagues4DOtherSeasons, backToEgipt],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Angola Leagues 1",//76
+        "button text": ["Girabola League 1 - 2024 / 2025", "Girabola League 1 - 2023 / 2024", "Girabola League 1 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [angolaLeagues1A2425, angolaLeagues1B2324, angolaLeagues1C2223, angolaLeagues1DOtherSeasons, backToAngola],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Angola Leagues 2",//77
+        "button text": ["Segundona League 2 - 2024 / 2025", "Segundona League 2 - 2023 / 2024", "Segundona League 2 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [angolaLeagues2A2425, angolaLeagues2B2324, angolaLeagues2C2223, angolaLeagues2DOtherSeasons, backToAngola],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Angola Leagues 3",//78
+        "button text": ["Campeonato Provincial League 3 - 2024 / 2025", "Campeonato Provincial League 3 - 2023 / 2024", "Campeonato Provincial League 3 - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [angolaLeagues3A2425, angolaLeagues3B2324, angolaLeagues3C2223, angolaLeagues3DOtherSeasons, backToAngola],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "Angola Leagues 4",//79
+        "button text": ["Taça de Angola - 2024 / 2025", "Taça de Angola - 2023 / 2024", "Taça de Angola - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [angolaLeagues4A2425, angolaLeagues4B2324, angolaLeagues4C2223, angolaLeagues4DOtherSeasons, backToAngola],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "South Africa Leagues 1",//80
+        "button text": ["Premiere Soccer League - 2024 / 2025", "Premiere Soccer League - 2023 / 2024", "Premiere Soccer League - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [southAfricaLeagues1A2425, southAfricaLeagues1B2324, southAfricaLeagues1C2223, southAfricaLeagues1DOtherSeasons, backToSouthAfrica],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "South Africa Leagues 2",//81
+        "button text": ["National First Division - 2024 / 2025", "National First Division - 2023 / 2024", "National First Division - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [southAfricaLeagues2A2425, southAfricaLeagues2B2324, southAfricaLeagues2C2223, southAfricaLeagues2DOtherSeasons, backToSouthAfrica],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "South Africa Leagues 3",//82
+        "button text": ["South Africa Cup - 2024 / 2025", "South Africa Cup - 2023 / 2024", "South Africa Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [southAfricaLeagues3A2425, southAfricaLeagues3B2324, southAfricaLeagues3C2223, southAfricaLeagues3DOtherSeasons, backToSouthAfrica],
+        text: "SELECT AN OPTION"
+    },
+    {
+        name: "South Africa Leagues 4",//83
+        "button text": ["League Cup - 2024 / 2025", "League Cup - 2023 / 2024", "League Cup - 2022 / 2023", "Other Seasons", "BACK"],
+        "button functions": [southAfricaLeagues4A2425, southAfricaLeagues4B2324, southAfricaLeagues4C2223, southAfricaLeagues4DOtherSeasons, backToSouthAfrica],
+        text: "SELECT AN OPTION"
+    },
+]
+    //TENTAR USAR <div id="output hide"> para esconder botoes adicionados!!!
+/*
+function southAfricaLeagues4() {
+button1.innerText = "League Cup - 2024 / 2025";
+button2.innerText = "League Cup - 2023 / 2024";
+button3.innerText = "League Cup - 2022 / 2023";
+button4.innerText = "Other Seasons";//Criar aqui novos botões
+button5.innerText = "BACK";
+button1.onclick = southAfricaLeagues4A2425;
+button2.onclick = southAfricaLeagues4B2324;
+button3.onclick = southAfricaLeagues4C2223;
+button4.onclick = southAfricaLeagues4DOtherSeasons;
+button5.onclick = backToSouthAfrica;
+text.innerText = "SELECT AN OPTION";
+}
+*/
+
+function update(location) {
+button1.innerText = location["button text"][0];
+button2.innerText = location["button text"][1];
+button3.innerText = location["button text"][2];
+button4.innerText = location["button text"][3];
+button5.innerText = location["button text"][4];
+button1.onclick = location["button functions"][0];
+button2.onclick = location["button functions"][1];
+button3.onclick = location["button functions"][2];
+button4.onclick = location["button functions"][3];
+button5.onclick = location["button functions"][4];
+text.innerText = location.text;
+}
+
+function leaguesFromEurope() {
+update(locations[0]);
+}
+
+function leaguesFromAmericas() {
+update(locations[1]);
+}
+
+function leaguesFromAsia() {
+update(locations[2]);
+}
+
+function leaguesFromAfrica() {
+update(locations[3]);
+}
+
+function otherLeagues() {
+text.innerText = "COMING SOON - We are preparing an amazing APP for you";
+}
+
+function leaguesFromEngland() {
+update(locations[4]);
+}
+
+function leaguesFromPortugal() {
+update(locations[5]);
+}
+
+function leaguesFromSpain() {
+update(locations[6]);
+}
+
+function leaguesFromFrance() {
+update(locations[7]);
+}
+
+function backToMain() {
+button1.innerText = "Leagues from Europe";
+button2.innerText = "Leagues from Americas";
+button3.innerText = "Leagues from Asia";
+button4.innerText = "Leagues from Africa";
+button5.innerText = "Other Leagues - Coming soon !!!";
+button1.onclick = leaguesFromEurope;
+button2.onclick = leaguesFromAmericas;
+button3.onclick = leaguesFromAsia;
+button4.onclick = leaguesFromAfrica;
+button5.onclick = otherLeagues;
+text.innerText = "SELECT AN OPTION - From above";
+}
+
+function backToEurope() {
+button1.innerText = "England";
+button2.innerText = "Portugal";
+button3.innerText = "Spain";
+button4.innerText = "France";
+button5.innerText = "BACK";
+button1.onclick = leaguesFromEngland;
+button2.onclick = leaguesFromPortugal;
+button3.onclick = leaguesFromSpain;
+button4.onclick = leaguesFromFrance;
+button5.onclick = backToMain;
+text.innerText = "SELECT AN OPTION";
+}
+
+function backToAmericas() {
+button1.innerText = "Argentina";
+button2.innerText = "Brazil";
+button3.innerText = "Mexico";
+button4.innerText = "USA";
+button5.innerText = "BACK";
+button1.onclick = leaguesFromArgentina;
+button2.onclick = leaguesFromBrazil;
+button3.onclick = leaguesFromMexico;
+button4.onclick = leaguesFromUsa;
+button5.onclick = backToMain;
+text.innerText = "SELECT AN OPTION";
+}
+
+function backToAsia() {
+button1.innerText = "Japan";
+button2.innerText = "China";
+button3.innerText = "United Arab Emirates";
+button4.innerText = "South Korea";
+button5.innerText = "BACK";
+button1.onclick = leaguesFromJapan;
+button2.onclick = leaguesFromChina;
+button3.onclick = leaguesFromUnitedArabEmirates;
+button4.onclick = leaguesFromSouthKorea;
+button5.onclick = backToMain;
+text.innerText = "SELECT AN OPTION";
+}
+
+function backToAfrica() {
+button1.innerText = "Morocco";
+button2.innerText = "Egipt";
+button3.innerText = "Angola";
+button4.innerText = "South Africa";
+button5.innerText = "BACK";
+button1.onclick = leaguesFromMorocco;
+button2.onclick = leaguesFromEgipt;
+button3.onclick = leaguesFromAngola;
+button4.onclick = leaguesFromSouthAfrica;
+button5.onclick = backToMain;
+text.innerText = "SELECT AN OPTION";
+}
+
+function leaguesFromArgentina() {
+update(locations[8]);
+}
+
+function leaguesFromBrazil() {
+update(locations[9]);
+}
+
+function leaguesFromMexico() {
+update(locations[10]);
+}
+
+function leaguesFromUsa() {
+update(locations[11]);
+}
+
+function leaguesFromJapan() {
+update(locations[12]);
+}
+
+function leaguesFromChina() {
+update(locations[13]);
+}
+
+function leaguesFromUnitedArabEmirates() {
+update(locations[14]);
+}
+
+function leaguesFromSouthKorea() {
+update(locations[15]);
+}
+
+function leaguesFromMorocco() {
+update(locations[16]);
+}
+
+function leaguesFromEgipt() {
+update(locations[17]);
+}
+
+function leaguesFromAngola() {
+update(locations[18]);
+}
+
+function leaguesFromSouthAfrica() {
+update(locations[19]);
+}
+
+function englandLeagues1() {
+update(locations[20]);
+}
+
+// trabalhar daqui para criar a tabela
+function englandLeagues1A2425() {
+  const htmlEnglandLeagues1A2425 = document.getElementById("englandLeagues1A2425");
+  
+  text.innerText = `
+  <Table border="6">
+
+
+    <caption>Brasileiro 2014</caption>
+    <thead>
+    
+    
+        <tbody>
+          <tr>
+            <td>Colocação</td>
+            <td>Equipe</td>
+            <th>Pontos</th> 
+            <th>Jogos</th>
+            <th>Vitorias</th>
+            <th>Empates</th>
+            <th>Derrotas</th>
+          </tr>
+    </thead>
+    <tr>
+            <td>1º</td>
+            <td>Cruzeiro</td>
+            <th>80</th> 
+            <th>38</th>
+            <th>24</th>
+            <th>8</th>
+            <th>6</th>
+          </tr>
+          <tr>
+            <td>2º</td>
+            <td>São Paulo</td>
+            <th>70</th> 
+            <th>38</th>
+            <th>20</th>
+            <th>10</th>
+            <th>8</th>
+          </tr>
+    <tr>
+            <td>3º</td>
+            <td>Internacional</td>
+            <th>69</th> 
+            <th>38</th>
+            <th>21</th>
+            <th>6</th>
+            <th>11</th>
+          </tr>
+    
+          <tr>
+            <td>4º</td>
+            <td>Corinthians</td>
+            <th>69</th> 
+            <th>38</th>
+            <th>19</th>
+            <th>12</th>
+            <th>7</th>
+          </tr>
+    
+          <tr>
+            <td>5º</td>
+            <td>Atlético-MG</td>
+            <th>62</th> 
+            <th>38</th>
+            <th>17</th>
+            <th>11</th>
+            <th>10</th>
+          </tr>
+    
+    
+          <tr>
+            <td>6º</td>
+            <td>Fluminense</td>
+            <th>61</th> 
+            <th>38</th>
+            <th>17</th>
+            <th>10</th>
+            <th>11</th>
+          </tr>
+    
+          <tr>
+            <td>7º</td>
+            <td>Flamengo</td>
+            <th>59</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+    
+          <tr>
+            <td>8º</td>
+            <td>Palmeiras</td>
+            <th>58</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+    
+          <tr>
+            <td>9º</td>
+            <td>Grêmio</td>
+            <th>56</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+    
+          <tr>
+            <td>10º</td>
+            <td>Bahia</td>
+            <th>53</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+    
+          <tr>
+            <td>11º</td>
+            <td>Chapecoense</td>
+            <th>52</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+          <tr>
+            <td>12º</td>
+            <td>Santos</td>
+            <th>50</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+    <tr>
+            <td>13º</td>
+            <td>Fortaleza</td>
+            <th>48</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+    
+          <tr>
+            <td>14º</td>
+            <td>Criciúma</td>
+            <th>47</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+    
+          <tr>
+            <td>15º</td>
+            <td>América-MG</td>
+            <th>44</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+    
+    
+          <tr>
+            <td>16º</td>
+            <td>Goiás</td>
+            <th>44</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+    
+          <tr>
+            <td>17º</td>
+            <td>Vasco da Gama</td>
+            <th>43</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+    
+          <tr>
+            <td>18º</td>
+            <td>RB Bragantino</td>
+            <th>40</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+    
+          <tr>
+            <td>19º</td>
+            <td>Atlético-GO</td>
+            <th>33</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+    
+          <tr>
+            <td>20º</td>
+            <td>Vitória-BA</td>
+            <th>27</th> 
+            <th>38</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+          </tr>
+    
+        </tbody>
+    
+        <tfoot>
+          
+        </tfoot>
+    
+      </table>
+</div>
+  
+  `;  
+  
+}
+
+function englandLeagues1B2324() {}
+
+function englandLeagues1C2223() {}
+
+function englandLeagues1DOtherSeasons() {}
+
+function backToEngland() {
+button1.innerText = "Premiere League";
+button2.innerText = "Championship";
+button3.innerText = "English Cup";
+button4.innerText = "English League Cup";
+button5.innerText = "BACK";
+button1.onclick = englandLeagues1;
+button2.onclick = englandLeagues2;
+button3.onclick = englandLeagues3;
+button4.onclick = englandLeagues4;
+button5.onclick = backToEurope;
+text.innerText = "SELECT AN OPTION";
+}
+
+function englandLeagues2() {
+update(locations[21]);
+}
+
+function englandLeagues2A2425() {}
+
+function englandLeagues2B2324() {}
+
+function englandLeagues2C2223() {}
+
+function englandLeagues2DOtherSeasons() {}
+
+function englandLeagues3() {
+update(locations[22]);
+}
+
+function englandLeagues3A2425() {}
+
+function englandLeagues3B2324() {}
+
+function englandLeagues3C2223() {}
+
+function englandLeagues3DOtherSeasons() {}
+
+function englandLeagues4() {
+update(locations[23]);
+}
+
+function portugalLeagues1() {
+update(locations[24]);
+}
+
+function backToPortugal() {
+button1.innerText = "Liga Portugal";
+button2.innerText = "Liga Portugal 2";
+button3.innerText = "Taça de Portugal";
+button4.innerText = "Taça da Liga de Portugal";
+button5.innerText = "BACK";
+button1.onclick = portugalLeagues1;
+button2.onclick = portugalLeagues2;
+button3.onclick = portugalLeagues3;
+button4.onclick = portugalLeagues4;
+button5.onclick = backToEurope;
+text.innerText = "SELECT AN OPTION";
+}
+
+function portugalLeagues1A2425() {}
+
+function portugalLeagues1B2324() {}
+
+function portugalLeagues1C2223() {}
+
+function portugalLeagues1DOtherSeasons() {}
+
+function portugalLeagues2() {
+update(locations[25]);
+}
+
+function portugalLeagues2A2425() {}
+
+function portugalLeagues2B2324() {}
+
+function portugalLeagues2C2223() {}
+
+function portugalLeagues2DOtherSeasons() {}
+
+function portugalLeagues3() {
+update(locations[26]);
+}
+
+function portugalLeagues3A2425() {}
+
+function portugalLeagues3B2324() {}
+
+function portugalLeagues3C2223() {}
+
+function portugalLeagues3DOtherSeasons() {}
+
+function portugalLeagues4() {
+update(locations[27]);
+}
+
+function portugalLeagues4A2425() {}
+
+function portugalLeagues4B2324() {}
+
+function portugalLeagues4C2223() {}
+
+function portugalLeagues4DOtherSeasons() {}
+
+function spainLeagues1() {
+update(locations[28]);
+}
+
+function backToSpain() {
+button1.innerText = "La Liga";
+button2.innerText = "La Liga 2";
+button3.innerText = "Copa del Rey";
+button4.innerText = "Copa de La Liga";
+button5.innerText = "BACK";
+button1.onclick = spainLeagues1;
+button2.onclick = spainLeagues2;
+button3.onclick = spainLeagues3;
+button4.onclick = spainLeagues4;
+button5.onclick = backToEurope;
+text.innerText = "SELECT AN OPTION";
+}
+
+function spainLeagues1A2425() {}
+
+function spainLeagues1B2324() {}
+
+function spainLeagues1C2223() {}
+
+function spainLeagues1DOtherSeasons() {}
+
+function spainLeagues2() {
+update(locations[29]);
+}
+
+function spainLeagues2A2425() {}
+
+function spainLeagues2B2324() {}
+
+function spainLeagues2C2223() {}
+
+function spainLeagues2DOtherSeasons() {}
+
+function spainLeagues3() {
+update(locations[30]);
+}
+
+function spainLeagues3A2425() {}
+
+function spainLeagues3B2324() {}
+
+function spainLeagues3C2223() {}
+
+function spainLeagues3DOtherSeasons() {}
+
+function spainLeagues4() {
+update(locations[31]);
+}
+
+function spainLeagues4A2425() {}
+
+function spainLeagues4B2324() {}
+
+function spainLeagues4C2223() {}
+
+function spainLeagues4DOtherSeasons() {}
+
+function franceLeagues1() {
+update(locations[32]);
+}
+
+function backToFrance() {
+button1.innerText = "Ligue 1";
+button2.innerText = "Ligue 2";
+button3.innerText = "Coupe de France";
+button4.innerText = "Coupe de la Ligue";
+button5.innerText = "BACK";
+button1.onclick = franceLeagues1;
+button2.onclick = franceLeagues2;
+button3.onclick = franceLeagues3;
+button4.onclick = franceLeagues4;
+button5.onclick = backToEurope;
+text.innerText = "SELECT AN OPTION";
+}
+
+function franceLeagues1A2425() {}
+
+function franceLeagues1B2324() {}
+
+function franceLeagues1C2223() {}
+
+function franceLeagues1DOtherSeasons() {}
+
+function franceLeagues2() {
+update(locations[33]);
+}
+
+function franceLeagues2A2425() {}
+
+function franceLeagues2B2324() {}
+
+function franceLeagues2C2223() {}
+
+function franceLeagues2DOtherSeasons() {}
+
+function franceLeagues3() {
+update(locations[34]);
+}
+
+function franceLeagues3A2425() {}
+
+function franceLeagues3B2324() {}
+
+function franceLeagues3C2223() {}
+
+function franceLeagues3DOtherSeasons() {}
+
+function franceLeagues4() {
+update(locations[35]);
+}
+
+function franceLeagues4A2425() {}
+
+function franceLeagues4B2324() {}
+
+function franceLeagues4C2223() {}
+
+function franceLeagues4DOtherSeasons() {}
+
+function argentinaLeagues1() {
+update(locations[36]);
+}
+
+function backToArgentina() {
+button1.innerText = "Primera Division";
+button2.innerText = "Primera Nacional";
+button3.innerText = "Primera B";
+button4.innerText = "Copa de Argentina";
+button5.innerText = "BACK";
+button1.onclick = argentinaLeagues1;
+button2.onclick = argentinaLeagues2;
+button3.onclick = argentinaLeagues3;
+button4.onclick = argentinaLeagues4;
+button5.onclick = backToAmericas;
+text.innerText = "SELECT AN OPTION";
+}
+
+function argentinaLeagues1A25() {}
+
+function argentinaLeagues1B24() {}
+
+function argentinaLeagues1C23() {}
+
+function argentinaLeagues1DOtherSeasons() {}
+
+function argentinaLeagues2() {
+update(locations[37]);
+}
+
+function argentinaLeagues2A25() {}
+
+function argentinaLeagues2B24() {}
+
+function argentinaLeagues2C23() {}
+
+function argentinaLeagues2DOtherSeasons() {}
+
+function argentinaLeagues3() {
+update(locations[38]);
+}
+
+function argentinaLeagues3A25() {}
+
+function argentinaLeagues3B24() {}
+
+function argentinaLeagues3C23() {}
+
+function argentinaLeagues3DOtherSeasons() {}
+
+function argentinaLeagues4() {
+update(locations[39]);
+}
+
+function argentinaLeagues4A25() {}
+
+function argentinaLeagues4B24() {}
+
+function argentinaLeagues4C23() {}
+
+function argentinaLeagues4DOtherSeasons() {}
+
+function brazilLeagues1() {
+update(locations[40]);
+}
+
+function backToBrazil() {
+button1.innerText = "Brasileirão Serie A";
+button2.innerText = "Brasileirão Serie B";
+button3.innerText = "Brasileirão Serie C";
+button4.innerText = "Copa do Brasil";
+button5.innerText = "BACK";
+button1.onclick = brazilLeagues1;
+button2.onclick = brazilLeagues2;
+button3.onclick = brazilLeagues3;
+button4.onclick = brazilLeagues4;
+button5.onclick = backToAmericas;
+text.innerText = "SELECT AN OPTION";
+}
+
+function brazilLeagues1A25() {}
+
+function brazilLeagues1B24() {}
+
+function brazilLeagues1C23() {}
+
+function brazilLeagues1DOtherSeasons() {}
+
+function brazilLeagues2() {
+update(locations[41]);
+}
+
+function brazilLeagues2A25() {}
+
+function brazilLeagues2B24() {}
+
+function brazilLeagues2C23() {}
+
+function brazilLeagues2DOtherSeasons() {}
+
+function brazilLeagues3() {
+update(locations[42]);
+}
+
+function brazilLeagues3A25() {}
+
+function brazilLeagues3B24() {}
+
+function brazilLeagues3C23() {}
+
+function brazilLeagues3DOtherSeasons() {}
+
+function brazilLeagues4() {
+update(locations[43])
+}
+
+function brazilLeagues4A25() {}
+
+function brazilLeagues4B24() {}
+
+function brazilLeagues4C23() {}
+
+function brazilLeagues4DOtherSeasons() {}
+
+function mexicoLeagues1() {
+update(locations[44]);
+}
+
+function backToMexico() {
+button1.innerText = "Liga MX";
+button2.innerText = "Liga de Expansion MX";
+button3.innerText = "Liga Premier Serie A";
+button4.innerText = "Copa MX";
+button5.innerText = "BACK";
+button1.onclick = mexicoLeagues1;
+button2.onclick = mexicoLeagues2;
+button3.onclick = mexicoLeagues3;
+button4.onclick = mexicoLeagues4;
+button5.onclick = backToAmericas;
+text.innerText = "SELECT AN OPTION";
+}
+
+function mexicoLeagues1A2425() {}
+
+function mexicoLeagues1B2324() {}
+
+function mexicoLeagues1C2223() {}
+
+function mexicoLeagues1DOtherSeasons() {}
+
+function mexicoLeagues2() {
+update(locations[45]);
+}
+
+function mexicoLeagues2A2425() {}
+
+function mexicoLeagues2B2324() {}
+
+function mexicoLeagues2C2223() {}
+
+function mexicoLeagues2DOtherSeasons() {}
+
+function mexicoLeagues3() {
+update(locations[46]);
+}
+
+function mexicoLeagues3A2425() {}
+
+function mexicoLeagues3B2324() {}
+
+function mexicoLeagues3C2223() {}
+
+function mexicoLeagues3DOtherSeasons() {}
+
+function mexicoLeagues4() {
+update(locations[47]);
+}
+
+function mexicoLeagues4A2425() {}
+
+function mexicoLeagues4B2324() {}
+
+function mexicoLeagues4C2223() {}
+
+function mexicoLeagues4DOtherSeasons() {}
+
+function usaLeagues1() {
+update(locations[48]);
+}
+
+function backToUsa() {
+button1.innerText = "MLS - Major League Soccer";
+button2.innerText = "USL Championship";
+button3.innerText = "MLS Next Pro";
+button4.innerText = "USL League One";
+button5.innerText = "BACK";
+button1.onclick = usaLeagues1;
+button2.onclick = usaLeagues2;
+button3.onclick = usaLeagues3;
+button4.onclick = usaLeagues4;
+button5.onclick = backToAmericas;
+text.innerText = "SELECT AN OPTION";
+}
+
+function usaLeagues1A25() {}
+
+function usaLeagues1B24() {}
+
+function usaLeagues1C23() {}
+
+function usaLeagues1DOtherSeasons() {}
+
+function usaLeagues2() {
+update(locations[49]);
+}
+
+function usaLeagues2A25() {}
+
+function usaLeagues2B24() {}
+
+function usaLeagues2C23() {}
+
+function usaLeagues2DOtherSeasons() {}
+
+function usaLeagues3() {
+update(locations[50]);
+}
+
+function usaLeagues3A25() {}
+
+function usaLeagues3B24() {}
+
+function usaLeagues3C23() {}
+
+function usaLeagues3DOtherSeasons() {}
+
+function usaLeagues4() {
+update(locations[51]);
+}
+
+function usaLeagues4A25() {}
+
+function usaLeagues4B24() {}
+
+function usaLeagues4C23() {}
+
+function usaLeagues4DOtherSeasons() {}
+
+function japanLeagues1() {
+update(locations[52]);
+}
+
+function backToJapan() {
+button1.innerText = "J1 League";
+button2.innerText = "J2 League";
+button3.innerText = "J3 League";
+button4.innerText = "Emperor´s Cup";
+button5.innerText = "BACK";
+button1.onclick = japanLeagues1;
+button2.onclick = japanLeagues2;
+button3.onclick = japanLeagues3;
+button4.onclick = japanLeagues4;
+button5.onclick = backToAsia;
+text.innerText = "SELECT AN OPTION";
+}
+
+function japanLeagues1A25() {}
+
+function japanLeagues1B24() {}
+
+function japanLeagues1C23() {}
+
+function japanLeagues1DOtherSeasons() {}
+
+function japanLeagues2() {
+update(locations[53]);
+}
+
+function japanLeagues2A25() {}
+
+function japanLeagues2B24() {}
+
+function japanLeagues2C23() {}
+
+function japanLeagues2DOtherSeasons() {}
+
+function japanLeagues3() {
+update(locations[54]);
+}
+
+function japanLeagues3A25() {}
+
+function japanLeagues3B24() {}
+
+function japanLeagues3C23() {}
+
+function japanLeagues3DOtherSeasons() {}
+
+function japanLeagues4() {
+update(locations[55]);
+}
+
+function japanLeagues4A25() {}
+
+function japanLeagues4B24() {}
+
+function japanLeagues4C23() {}
+
+function japanLeagues4DOtherSeasons() {}
+
+function chinaLeagues1() {
+update(locations[56]);
+}
+
+function backToChina() {
+button1.innerText = "CFA Super League";
+button2.innerText = "CFA China League";
+button3.innerText = "CFA China League 2";
+button4.innerText = "China Cup";
+button5.innerText = "BACK";
+button1.onclick = chinaLeagues1;
+button2.onclick = chinaLeagues2;
+button3.onclick = chinaLeagues3;
+button4.onclick = chinaLeagues4;
+button5.onclick = backToAsia;
+text.innerText = "SELECT AN OPTION";
+}
+
+function chinaLeagues1A25() {}
+
+function chinaLeagues1B24() {}
+
+function chinaLeagues1C23() {}
+
+function chinaLeagues1DOtherSeasons() {}
+
+function chinaLeagues2() {
+update(locations[57]);
+}
+
+function chinaLeagues2A25() {}
+
+function chinaLeagues2B24() {}
+
+function chinaLeagues2C23() {}
+
+function chinaLeagues2DOtherSeasons() {}
+
+function chinaLeagues3() {
+update(locations[58]);
+}
+
+function chinaLeagues3A25() {}
+
+function chinaLeagues3B24() {}
+
+function chinaLeagues3C23() {}
+
+function chinaLeagues3DOtherSeasons() {}
+
+function chinaLeagues4() {
+update(locations[59]);
+}
+
+function chinaLeagues4A25() {}
+
+function chinaLeagues4B24() {}
+
+function chinaLeagues4C23() {}
+
+function chinaLeagues4DOtherSeasons() {}
+
+function unitedArabEmiratesLeagues1() {
+update(locations[60]);
+}
+
+function backToUnitedArabEmirates() {
+button1.innerText = "UAE Pro League";
+button2.innerText = "UAE Division 1";
+button3.innerText = "UAE Division 2";
+button4.innerText = "League Cup";
+button5.innerText = "BACK";
+button1.onclick = unitedArabEmiratesLeagues1;
+button2.onclick = unitedArabEmiratesLeagues2;
+button3.onclick = unitedArabEmiratesLeagues3;
+button4.onclick = unitedArabEmiratesLeagues4;
+button5.onclick = backToAsia;
+text.innerText = "SELECT AN OPTION";
+}
+
+function unitedArabEmiratesLeagues1A2425() {}
+
+function unitedArabEmiratesLeagues1B2324() {}
+
+function unitedArabEmiratesLeagues1C2223() {}
+
+function unitedArabEmiratesLeagues1DOtherSeasons() {}
+
+function unitedArabEmiratesLeagues2() {
+update(locations[61]);
+}
+
+function unitedArabEmiratesLeagues2A2425() {}
+
+function unitedArabEmiratesLeagues2B2324() {}
+
+function unitedArabEmiratesLeagues2C2223() {}
+
+function unitedArabEmiratesLeagues2DOtherSeasons() {}
+
+function unitedArabEmiratesLeagues3() {
+update(locations[62]);
+}
+
+function unitedArabEmiratesLeagues3A2425() {}
+
+function unitedArabEmiratesLeagues3B2324() {}
+
+function unitedArabEmiratesLeagues3C2223() {}
+
+function unitedArabEmiratesLeagues3DOtherSeasons() {}
+
+function unitedArabEmiratesLeagues4() {
+update(locations[63]);
+}
+
+function unitedArabEmiratesLeagues4A2425() {}
+
+function unitedArabEmiratesLeagues4B2324() {}
+
+function unitedArabEmiratesLeagues4C2223() {}
+
+function unitedArabEmiratesLeagues4DOtherSeasons() {}
+
+function koreaLeagues1() {
+update(locations[64]);
+}
+
+function backToKorea() {
+button1.innerText = "K League 1";
+button2.innerText = "K League 2";
+button3.innerText = "Korean Cup";
+button4.innerText = "League Cup";
+button5.innerText = "BACK";
+button1.onclick = koreaLeagues1;
+button2.onclick = koreaLeagues2;
+button3.onclick = koreaLeagues3;
+button4.onclick = koreaLeagues4;
+button5.onclick = backToAsia;
+text.innerText = "SELECT AN OPTION";
+}
+
+function koreaLeagues1A25() {}
+
+function koreaLeagues1B24() {}
+
+function koreaLeagues1C23() {}
+
+function koreaLeagues1DOtherSeasons() {}
+
+function koreaLeagues2() {
+update(locations[65]);
+}
+
+function koreaLeagues2A25() {}
+
+function koreaLeagues2B24() {}
+
+function koreaLeagues2C23() {}
+
+function koreaLeagues2DOtherSeasons() {}
+
+function koreaLeagues3() {
+update(locations[66]);
+}
+
+function koreaLeagues3A25() {}
+
+function koreaLeagues3B24() {}
+
+function koreaLeagues3C23() {}
+
+function koreaLeagues3DOtherSeasons() {}
+
+function koreaLeagues4() {
+update(locations[67]);
+}
+
+function koreaLeagues4A25() {}
+
+function koreaLeagues4B24() {}
+
+function koreaLeagues4C23() {}
+
+function koreaLeagues4DOtherSeasons() {}
+
+function moroccoLeagues1() {
+update(locations[68]);
+}
+
+function backToMorocco() {
+button1.innerText = "Botola 1";
+button2.innerText = "Botola 2";
+button3.innerText = "National";
+button4.innerText = "Moroccan Throne Cup";
+button5.innerText = "BACK";
+button1.onclick = moroccoLeagues1;
+button2.onclick = moroccoLeagues2;
+button3.onclick = moroccoLeagues3;
+button4.onclick = moroccoLeagues4;
+button5.onclick = backToAfrica;
+text.innerText = "SELECT AN OPTION";
+}
+
+function moroccoLeagues1A2425() {}
+
+function moroccoLeagues1B2324() {}
+
+function moroccoLeagues1C2223() {}
+
+function moroccoLeagues1DOtherSeasons() {}
+
+function moroccoLeagues2() {
+update(locations[69]);
+}
+
+function moroccoLeagues2A2425() {}
+
+function moroccoLeagues2B2324() {}
+
+function moroccoLeagues2C2223() {}
+
+function moroccoLeagues2DOtherSeasons() {}
+
+function moroccoLeagues3() {
+update(locations[70]);
+}
+
+function moroccoLeagues3A2425() {}
+
+function moroccoLeagues3B2324() {}
+
+function moroccoLeagues3C2223() {}
+
+function moroccoLeagues3DOtherSeasons() {}
+
+function moroccoLeagues4() {
+update(locations[71]);
+}
+
+function moroccoLeagues4A2425() {}
+
+function moroccoLeagues4B2324() {}
+
+function moroccoLeagues4C2223() {}
+
+function moroccoLeagues4DOtherSeasons() {}
+
+function egiptLeagues1() {
+update(locations[72]);
+}
+
+function backToEgipt() {
+button1.innerText = "Premiere League";
+button2.innerText = "Division 2A";
+button3.innerText = "Egipt Cup";
+button4.innerText = "League Cup";
+button5.innerText = "BACK";
+button1.onclick = egiptLeagues1;
+button2.onclick = egiptLeagues2;
+button3.onclick = egiptLeagues3;
+button4.onclick = egiptLeagues4;
+button5.onclick = backToAfrica;
+text.innerText = "SELECT AN OPTION";
+}
+
+function egiptLeagues1A2425() {}
+
+function egiptLeagues1B2324() {}
+
+function egiptLeagues1C2223() {}
+
+function egiptLeagues1DOtherSeasons() {}
+
+function egiptLeagues2() {
+update(locations[73]);
+}
+
+function egiptLeagues2A2425() {}
+
+function egiptLeagues2B2324() {}
+
+function egiptLeagues2C2223() {}
+
+function egiptLeagues2DOtherSeasons() {}
+
+function egiptLeagues3() {
+update(locations[74]);
+}
+
+function egiptLeagues3A2425() {}
+
+function egiptLeagues3B2324() {}
+
+function egiptLeagues3C2223() {}
+
+function egiptLeagues3DOtherSeasons() {}
+
+function egiptLeagues4() {
+update(locations[75]);
+}
+
+function egiptLeagues4A2425() {}
+
+function egiptLeagues4B2324() {}
+
+function egiptLeagues4C2223() {}
+
+function egiptLeagues4DOtherSeasons() {}
+
+function angolaLeagues1() {
+update(locations[76]);
+}
+
+function backToAngola() {
+button1.innerText = "Girabola - League 1";
+button2.innerText = "Segundona - League 2";
+button3.innerText = "Campeonato Provincial - League 3";
+button4.innerText = "Taça de Angola";
+button5.innerText = "BACK";
+button1.onclick = angolaLeagues1;
+button2.onclick = angolaLeagues2;
+button3.onclick = angolaLeagues3;
+button4.onclick = angolaLeagues4;
+button5.onclick = backToAfrica;
+text.innerText = "SELECT AN OPTION";
+}
+
+function angolaLeagues1A2425() {}
+
+function angolaLeagues1B2324() {}
+
+function angolaLeagues1C2223() {}
+
+function angolaLeagues1DOtherSeasons() {}
+
+function angolaLeagues2() {
+update(locations[77]);
+}
+
+function angolaLeagues2A2425() {}
+
+function angolaLeagues2B2324() {}
+
+function angolaLeagues2C2223() {}
+
+function angolaLeagues2DOtherSeasons() {}
+
+function angolaLeagues3() {
+update(locations[78]);
+}
+
+function angolaLeagues3A2425() {}
+
+function angolaLeagues3B2324() {}
+
+function angolaLeagues3C2223() {}
+
+function angolaLeagues3DOtherSeasons() {}
+
+function angolaLeagues4() {
+update(locations[79]);
+}
+
+function angolaLeagues4A2425() {}
+
+function angolaLeagues4B2324() {}
+
+function angolaLeagues4C2223() {}
+
+function angolaLeagues4DOtherSeasons() {}
+
+function southAfricaLeagues1() {
+update(locations[80]);
+}
+
+function backToSouthAfrica() {
+button1.innerText = "Premiere Soccer League";
+button2.innerText = "National First Division";
+button3.innerText = "South Africa Cup";
+button4.innerText = "League Cup";
+button5.innerText = "BACK";
+button1.onclick = southAfricaLeagues1;
+button2.onclick = southAfricaLeagues2;
+button3.onclick = southAfricaLeagues3;
+button4.onclick = southAfricaLeagues4;
+button5.onclick = backToAfrica;
+text.innerText = "SELECT AN OPTION";
+}
+
+function southAfricaLeagues1A2425() {}
+
+function southAfricaLeagues1B2324() {}
+
+function southAfricaLeagues1C2223() {}
+
+function southAfricaLeagues1DOtherSeasons() {}
+
+function southAfricaLeagues2() {
+update(locations[81]);
+}
+
+function southAfricaLeagues2A2425() {}
+
+function southAfricaLeagues2B2324() {}
+
+function southAfricaLeagues2C2223() {}
+
+function southAfricaLeagues2DOtherSeasons() {}
+
+function southAfricaLeagues3() {
+update(locations[82]);
+}
+
+function southAfricaLeagues3A2425() {}
+
+function southAfricaLeagues3B2324() {}
+
+function southAfricaLeagues3C2223() {}
+
+function southAfricaLeagues3DOtherSeasons() {}
+
+function southAfricaLeagues4() {
+update(locations[83]);
+}
+
+function southAfricaLeagues4A2425() {}
+
+function southAfricaLeagues4B2324() {}
+
+function southAfricaLeagues4C2223() {}
+
+function southAfricaLeagues4DOtherSeasons() {}
+
+ //initialize buttons
+button1.onclick = leaguesFromEurope;
+button2.onclick = leaguesFromAmericas;
+button3.onclick = leaguesFromAsia;
+button4.onclick = leaguesFromAfrica;
+button5.onclick = otherLeagues;
+
+</script>
+<style>
+
+html {
+    box-sizing: border-box;
+    max-width: 150%;
+    border: none;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  max-width: 100%;
+}
+
+body {
+/*background-color: #0a0a23;*/
+background-color: lightgray;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#text {
+background-color: lightgray;
+color: black;
+padding: 15px;
+width: 100%;
+height: 90vh;
+margin: 0;
+text-align: center;
+font-family: sans-serif;
+}
+#controls {
+border: none;
+color: #0a0a23;
+padding: 1%;
+width: 100%;
+}
+button {
+/*cursor: pointer;*/
+color: white;
+background-color: black;
+/*background-image: linear-gradient(#fecc4c, #ffac33);*/
+border: 1px solid white;
+font-size: 20px;
+width: 100%;
+padding: 1%;
+/* text-transform: uppercase; */
+}
+
+	td, th {
+		text-align: center;
+	}
+
+
+</style>
+</body>
+</html>
   <!--<style>
     .d1 {
       
@@ -65,5 +2051,5 @@
     <div class="d9"><button id="button9">9- Não desejar a mulher do próximo</button></div>
     <div class="d10"><button id="button10">10- Não cobiçar as coisas alheias</button></div>
   </div>-->
-</body>
-</html>
+<!--</body>
+</html>-->
